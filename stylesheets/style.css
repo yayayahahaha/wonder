@@ -202,8 +202,13 @@ body {
   height: 95vh;
 }
 /* line 130, ../sass/style.scss */
-.main_body .wonder {
+.main_body .scene {
   position: absolute;
+}
+/* line 134, ../sass/style.scss */
+.main_body .wonder {
+  width: 100%;
+  height: 100%;
   -moz-box-shadow: 0px 0px 20px snow;
   -webkit-box-shadow: 0px 0px 20px snow;
   box-shadow: 0px 0px 20px snow;
@@ -214,165 +219,165 @@ body {
   background-color: rgba(0, 0, 0, 0.6);
   cursor: pointer;
 }
-/* line 137, ../sass/style.scss */
+/* line 143, ../sass/style.scss */
 .main_body .wonder:hover {
   -moz-box-shadow: 0px 0px 60px snow;
   -webkit-box-shadow: 0px 0px 60px snow;
   box-shadow: 0px 0px 60px snow;
 }
-/* line 143, ../sass/style.scss */
-.main_body .wonder:nth-child(1) {
+/* line 149, ../sass/style.scss */
+.main_body .scene:nth-child(1) {
   top: 10vh;
   left: 5vw;
   width: 30vw;
   height: 40vh;
 }
-/* line 150, ../sass/style.scss */
-.main_body .wonder:nth-child(2) {
+/* line 156, ../sass/style.scss */
+.main_body .scene:nth-child(2) {
   top: 48vh;
   left: 20vw;
   width: 20vw;
   height: 50vh;
 }
-/* line 157, ../sass/style.scss */
-.main_body .wonder:nth-child(3) {
+/* line 163, ../sass/style.scss */
+.main_body .scene:nth-child(3) {
   top: 81vh;
   left: 63vw;
   width: 30vw;
   height: 45vh;
 }
-/* line 164, ../sass/style.scss */
-.main_body .wonder:nth-child(4) {
+/* line 170, ../sass/style.scss */
+.main_body .scene:nth-child(4) {
   top: 40vh;
   left: 65vw;
   width: 30vw;
   height: 20vh;
 }
-/* line 171, ../sass/style.scss */
-.main_body .wonder:nth-child(5) {
+/* line 177, ../sass/style.scss */
+.main_body .scene:nth-child(5) {
   top: 9vh;
   left: 47vw;
   width: 20vw;
   height: 43vh;
 }
-/* line 143, ../sass/style.scss */
-.main_body .wonder:nth-child(6) {
+/* line 149, ../sass/style.scss */
+.main_body .scene:nth-child(6) {
   top: 110vh;
   left: 5vw;
   width: 30vw;
   height: 40vh;
 }
-/* line 150, ../sass/style.scss */
-.main_body .wonder:nth-child(7) {
+/* line 156, ../sass/style.scss */
+.main_body .scene:nth-child(7) {
   top: 148vh;
   left: 20vw;
   width: 20vw;
   height: 50vh;
 }
-/* line 157, ../sass/style.scss */
-.main_body .wonder:nth-child(8) {
+/* line 163, ../sass/style.scss */
+.main_body .scene:nth-child(8) {
   top: 181vh;
   left: 63vw;
   width: 30vw;
   height: 45vh;
 }
-/* line 164, ../sass/style.scss */
-.main_body .wonder:nth-child(9) {
+/* line 170, ../sass/style.scss */
+.main_body .scene:nth-child(9) {
   top: 140vh;
   left: 65vw;
   width: 30vw;
   height: 20vh;
 }
-/* line 171, ../sass/style.scss */
-.main_body .wonder:nth-child(10) {
+/* line 177, ../sass/style.scss */
+.main_body .scene:nth-child(10) {
   top: 109vh;
   left: 47vw;
   width: 20vw;
   height: 43vh;
 }
-/* line 143, ../sass/style.scss */
-.main_body .wonder:nth-child(11) {
+/* line 149, ../sass/style.scss */
+.main_body .scene:nth-child(11) {
   top: 210vh;
   left: 5vw;
   width: 30vw;
   height: 40vh;
 }
-/* line 150, ../sass/style.scss */
-.main_body .wonder:nth-child(12) {
+/* line 156, ../sass/style.scss */
+.main_body .scene:nth-child(12) {
   top: 248vh;
   left: 20vw;
   width: 20vw;
   height: 50vh;
 }
-/* line 157, ../sass/style.scss */
-.main_body .wonder:nth-child(13) {
+/* line 163, ../sass/style.scss */
+.main_body .scene:nth-child(13) {
   top: 281vh;
   left: 63vw;
   width: 30vw;
   height: 45vh;
 }
-/* line 164, ../sass/style.scss */
-.main_body .wonder:nth-child(14) {
+/* line 170, ../sass/style.scss */
+.main_body .scene:nth-child(14) {
   top: 240vh;
   left: 65vw;
   width: 30vw;
   height: 20vh;
 }
-/* line 171, ../sass/style.scss */
-.main_body .wonder:nth-child(15) {
+/* line 177, ../sass/style.scss */
+.main_body .scene:nth-child(15) {
   top: 209vh;
   left: 47vw;
   width: 20vw;
   height: 43vh;
 }
-/* line 143, ../sass/style.scss */
-.main_body .wonder:nth-child(16) {
+/* line 149, ../sass/style.scss */
+.main_body .scene:nth-child(16) {
   top: 310vh;
   left: 5vw;
   width: 30vw;
   height: 40vh;
 }
-/* line 150, ../sass/style.scss */
-.main_body .wonder:nth-child(17) {
+/* line 156, ../sass/style.scss */
+.main_body .scene:nth-child(17) {
   top: 348vh;
   left: 20vw;
   width: 20vw;
   height: 50vh;
 }
-/* line 157, ../sass/style.scss */
-.main_body .wonder:nth-child(18) {
+/* line 163, ../sass/style.scss */
+.main_body .scene:nth-child(18) {
   top: 381vh;
   left: 63vw;
   width: 30vw;
   height: 45vh;
 }
-/* line 164, ../sass/style.scss */
-.main_body .wonder:nth-child(19) {
+/* line 170, ../sass/style.scss */
+.main_body .scene:nth-child(19) {
   top: 340vh;
   left: 65vw;
   width: 30vw;
   height: 20vh;
 }
-/* line 171, ../sass/style.scss */
-.main_body .wonder:nth-child(20) {
+/* line 177, ../sass/style.scss */
+.main_body .scene:nth-child(20) {
   top: 309vh;
   left: 47vw;
   width: 20vw;
   height: 43vh;
 }
 
-/* line 181, ../sass/style.scss */
+/* line 187, ../sass/style.scss */
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
 
-/* line 185, ../sass/style.scss */
+/* line 191, ../sass/style.scss */
 ::-webkit-scrollbar-track {
   background-color: transparent;
 }
 
-/* line 188, ../sass/style.scss */
+/* line 194, ../sass/style.scss */
 ::-webkit-scrollbar-thumb {
   background-color: transparent;
   border: 1px solid rgba(255, 255, 255, 0.6);
