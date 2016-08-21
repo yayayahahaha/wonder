@@ -50,7 +50,7 @@ body{
 	overflow: hidden;
 
 	color: #141414;
-	@include text-shadow(0px 0px 3px snow);
+	@include text-shadow(0px 0px 3px snow );
 }
 
 .header{
@@ -195,8 +195,57 @@ body{
 		width: 100%;
 		height: 100%;
 		@include box-shadow(0px 0px 20px snow);
+		background-color: rgba(0,0,0,0.8);
 		border-radius: 50%;
+		@include transition(all 0.5s);
+		&:hover{
+			cursor: pointer;
+			border-radius: 0px;
+			background: snow;
+		}
+	}
+}
 
+.to_top{
+	position: fixed;
+	bottom: 7vh;
+	left: 3vw;
+	width: 50px;
+	height: 50px;
+	color: snow;
+	opacity: 0;
+	@include box-shadow(0px 0px 10px snow );
+	@include transition(opacity 0.2s);
+	&:hover{
+		&:after{
+			@include animation(top_animation 0.2s linear forwards);
+		}
+	}
+	&:after{
+		cursor: pointer;
+		content: 'Back';
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		display: flex;
+		justify-content:center;
+		align-items:center;
+	}
+}
+@include keyframes(top_animation){
+	0%{
+		opacity: 1;
+	}
+	25%{
+		opacity: 0;
+	}
+	50%{
+		opacity: 0;
+		content: 'Top';
+	}
+	100%{
+		opacity: 1;
+		content: 'Top';
 	}
 }
 
@@ -208,6 +257,6 @@ body{
 	background-color: transparent;
 }
 ::-webkit-scrollbar-thumb {
-	background-color: transparent;
-	border: 1px solid rgba(255,255,255,0.6);
+	background-color: rgba(0,0,0,0);
+	border: 1px solid rgba(255,255,255,1);
 }

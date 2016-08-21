@@ -382,22 +382,116 @@ body {
   -moz-box-shadow: 0px 0px 20px snow;
   -webkit-box-shadow: 0px 0px 20px snow;
   box-shadow: 0px 0px 20px snow;
+  background-color: rgba(0, 0, 0, 0.8);
   border-radius: 50%;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+/* line 201, ../sass/style.scss */
+.egg .egg_in:hover {
+  cursor: pointer;
+  border-radius: 0px;
+  background: snow;
 }
 
-/* line 203, ../sass/style.scss */
+/* line 209, ../sass/style.scss */
+.to_top {
+  position: fixed;
+  bottom: 7vh;
+  left: 3vw;
+  width: 50px;
+  height: 50px;
+  color: snow;
+  opacity: 0;
+  -moz-box-shadow: 0px 0px 10px snow;
+  -webkit-box-shadow: 0px 0px 10px snow;
+  box-shadow: 0px 0px 10px snow;
+  -moz-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+/* line 220, ../sass/style.scss */
+.to_top:hover:after {
+  -moz-animation: top_animation 0.2s linear forwards;
+  -webkit-animation: top_animation 0.2s linear forwards;
+  animation: top_animation 0.2s linear forwards;
+}
+/* line 224, ../sass/style.scss */
+.to_top:after {
+  cursor: pointer;
+  content: 'Back';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@-moz-keyframes top_animation {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+    content: 'Top';
+  }
+  100% {
+    opacity: 1;
+    content: 'Top';
+  }
+}
+@-webkit-keyframes top_animation {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+    content: 'Top';
+  }
+  100% {
+    opacity: 1;
+    content: 'Top';
+  }
+}
+@keyframes top_animation {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+    content: 'Top';
+  }
+  100% {
+    opacity: 1;
+    content: 'Top';
+  }
+}
+/* line 252, ../sass/style.scss */
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
 
-/* line 207, ../sass/style.scss */
+/* line 256, ../sass/style.scss */
 ::-webkit-scrollbar-track {
   background-color: transparent;
 }
 
-/* line 210, ../sass/style.scss */
+/* line 259, ../sass/style.scss */
 ::-webkit-scrollbar-thumb {
   background-color: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  border: 1px solid white;
 }

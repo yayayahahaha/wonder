@@ -1,7 +1,8 @@
 window.onload = function() {
 	var scene = document.getElementsByClassName('scene');
 	var parallaxs = [];
-	var main_body = $("#main_body");
+	var main_body = $("#main_body"),
+		to_top = document.getElementById('to_top');
 
 	for (var i = 0; i < scene.length; i++) {
 		var parallax = new Parallax(scene[i], {
@@ -37,7 +38,24 @@ window.onload = function() {
 		originY: 1
 	}));
 
-	main_body.mousewheel(function() {
-
+	main_body.mousewheel(function(e) {
+		if (e.deltaY == 1) {
+			if (main_body.scrollTop() - e.deltaFactor <= 0) {
+				to_top.style.opacity = 0;
+			}
+		} else {
+			if (main_body.scrollTop() + e.deltaFactor >= 0) {
+				to_top.style.opacity = 1;
+			}
+		}
 	});
+
+	to_top.onclick = function() {
+		main_body.animate({
+				scrollTop: 0
+			},
+			400,function(){
+				to_top.style.opacity = 0;
+			});
+	}
 }
