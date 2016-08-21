@@ -6,36 +6,27 @@ window.onload = function() {
 
 	for (var i = 0; i < scene.length; i++) {
 		var parallax = new Parallax(scene[i], {
-			relativeInput: true,
 			calibrateX: true,
 			calibrateY: true,
 			invertX: Math.random() > 0.5 ? true : false,
 			invertY: Math.random() > 0.5 ? true : false,
-			limitX: false,
-			limitY: false,
-			scalarX: Math.random() * 20 - Math.random() * 8,
-			scalarY: Math.random() * 20 - Math.random() * 8,
+			scalarX: 45,
+			scalarY: 45,
 			frictionX: 0.01,
-			frictionY: 0.01,
-			originX: 1,
-			originY: 1
+			frictionY: 0.01
 		});
 		parallaxs.push(parallax);
 	}
 	parallaxs.push(new Parallax(document.getElementById('egg'), {
-		relativeInput: true,
-		calibrateX: false,
-		calibrateY: false,
+		// relativeInput: true,
+		calibrateX: true,
+		calibrateY: true,
 		invertX: true,
 		invertY: true,
-		limitX: false,
-		limitY: false,
-		scalarX: 500,
-		scalarY: 500,
-		frictionX: 0.01,
-		frictionY: 0.01,
-		originX: 1,
-		originY: 1
+		scalarX: 5000,
+		scalarY: 5000,
+		frictionX: 0.03,
+		frictionY: 0.03
 	}));
 
 	main_body.mousewheel(function(e) {

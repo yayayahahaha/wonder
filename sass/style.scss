@@ -50,7 +50,7 @@ body{
 	overflow: hidden;
 
 	color: #141414;
-	@include text-shadow(0px 0px 3px snow );
+	@include text-shadow(0px 0px 1px snow );
 }
 
 .header{
@@ -210,12 +210,14 @@ body{
 	position: fixed;
 	bottom: 7vh;
 	left: 3vw;
-	width: 50px;
-	height: 50px;
+	width: 60px;
+	height: 60px;
 	color: snow;
 	opacity: 0;
 	@include box-shadow(0px 0px 10px snow );
 	@include transition(opacity 0.2s);
+
+
 	&:hover{
 		&:after{
 			@include animation(top_animation 0.2s linear forwards);
@@ -232,7 +234,7 @@ body{
 		align-items:center;
 	}
 }
-@include keyframes(top_animation){
+@include keyframes(top_animation) {
 	0%{
 		opacity: 1;
 	}

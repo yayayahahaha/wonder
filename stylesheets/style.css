@@ -95,7 +95,7 @@ body {
   background-size: 100vw 100vh;
   overflow: hidden;
   color: #141414;
-  text-shadow: 0px 0px 3px snow;
+  text-shadow: 0px 0px 1px snow;
 }
 
 /* line 56, ../sass/style.scss */
@@ -401,8 +401,8 @@ body {
   position: fixed;
   bottom: 7vh;
   left: 3vw;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   color: snow;
   opacity: 0;
   -moz-box-shadow: 0px 0px 10px snow;
@@ -413,13 +413,13 @@ body {
   -webkit-transition: opacity 0.2s;
   transition: opacity 0.2s;
 }
-/* line 220, ../sass/style.scss */
+/* line 222, ../sass/style.scss */
 .to_top:hover:after {
   -moz-animation: top_animation 0.2s linear forwards;
   -webkit-animation: top_animation 0.2s linear forwards;
   animation: top_animation 0.2s linear forwards;
 }
-/* line 224, ../sass/style.scss */
+/* line 226, ../sass/style.scss */
 .to_top:after {
   cursor: pointer;
   content: 'Back';
@@ -479,18 +479,18 @@ body {
     content: 'Top';
   }
 }
-/* line 252, ../sass/style.scss */
+/* line 254, ../sass/style.scss */
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
 
-/* line 256, ../sass/style.scss */
+/* line 258, ../sass/style.scss */
 ::-webkit-scrollbar-track {
   background-color: transparent;
 }
 
-/* line 259, ../sass/style.scss */
+/* line 261, ../sass/style.scss */
 ::-webkit-scrollbar-thumb {
   background-color: transparent;
   border: 1px solid white;
