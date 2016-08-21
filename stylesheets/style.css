@@ -93,7 +93,8 @@ body {
   background: linear-gradient(45deg, #000000, #333333);
   background-size: 100vw 100vh;
   overflow: hidden;
-  color: snow;
+  color: #141414;
+  text-shadow: 0px 0px 3px snow;
 }
 
 /* line 55, ../sass/style.scss */
@@ -104,7 +105,7 @@ body {
   width: 100vw;
   height: 5vh;
 }
-/* line 63, ../sass/style.scss */
+/* line 64, ../sass/style.scss */
 .header .title {
   position: relative;
   float: left;
@@ -117,6 +118,8 @@ body {
   cursor: pointer;
   font-size: 2em;
   font-family: arial;
+  color: #141414;
+  text-shadow: 0px 0px 3px snow;
   text-align: center;
 }
 /* line 22, ../sass/style.scss */
@@ -130,14 +133,14 @@ body {
   animation: shake 0.2s linear forwards;
   color: #ccc;
 }
-/* line 76, ../sass/style.scss */
+/* line 79, ../sass/style.scss */
 .header .title:before {
   content: '';
   height: 100%;
   display: inline-block;
   vertical-align: middle;
 }
-/* line 84, ../sass/style.scss */
+/* line 87, ../sass/style.scss */
 .header .about {
   float: right;
   height: 100%;
@@ -156,14 +159,14 @@ body {
   animation: shake 0.2s linear forwards;
   color: #ccc;
 }
-/* line 94, ../sass/style.scss */
+/* line 97, ../sass/style.scss */
 .header .about:before {
   content: '';
   height: 100%;
   display: inline-block;
   vertical-align: middle;
 }
-/* line 102, ../sass/style.scss */
+/* line 105, ../sass/style.scss */
 .header .contact {
   float: right;
   height: 100%;
@@ -182,7 +185,7 @@ body {
   animation: shake 0.2s linear forwards;
   color: #ccc;
 }
-/* line 112, ../sass/style.scss */
+/* line 115, ../sass/style.scss */
 .header .contact:before {
   content: '';
   height: 100%;
@@ -190,7 +193,7 @@ body {
   vertical-align: middle;
 }
 
-/* line 121, ../sass/style.scss */
+/* line 124, ../sass/style.scss */
 .main_body {
   position: relative;
   overflow-x: hidden;
@@ -198,7 +201,7 @@ body {
   top: 5vh;
   height: 95vh;
 }
-/* line 127, ../sass/style.scss */
+/* line 130, ../sass/style.scss */
 .main_body .wonder {
   position: absolute;
   -moz-box-shadow: 0px 0px 20px snow;
@@ -211,146 +214,146 @@ body {
   background-color: rgba(0, 0, 0, 0.6);
   cursor: pointer;
 }
-/* line 134, ../sass/style.scss */
+/* line 137, ../sass/style.scss */
 .main_body .wonder:hover {
   -moz-box-shadow: 0px 0px 60px snow;
   -webkit-box-shadow: 0px 0px 60px snow;
   box-shadow: 0px 0px 60px snow;
 }
-/* line 140, ../sass/style.scss */
+/* line 143, ../sass/style.scss */
 .main_body .wonder:nth-child(1) {
   top: 10vh;
   left: 5vw;
   width: 30vw;
   height: 40vh;
 }
-/* line 147, ../sass/style.scss */
+/* line 150, ../sass/style.scss */
 .main_body .wonder:nth-child(2) {
   top: 48vh;
   left: 20vw;
   width: 20vw;
   height: 50vh;
 }
-/* line 154, ../sass/style.scss */
+/* line 157, ../sass/style.scss */
 .main_body .wonder:nth-child(3) {
   top: 81vh;
   left: 63vw;
   width: 30vw;
   height: 45vh;
 }
-/* line 161, ../sass/style.scss */
+/* line 164, ../sass/style.scss */
 .main_body .wonder:nth-child(4) {
   top: 40vh;
   left: 65vw;
   width: 30vw;
   height: 20vh;
 }
-/* line 168, ../sass/style.scss */
+/* line 171, ../sass/style.scss */
 .main_body .wonder:nth-child(5) {
   top: 9vh;
   left: 47vw;
   width: 20vw;
   height: 43vh;
 }
-/* line 140, ../sass/style.scss */
+/* line 143, ../sass/style.scss */
 .main_body .wonder:nth-child(6) {
   top: 110vh;
   left: 5vw;
   width: 30vw;
   height: 40vh;
 }
-/* line 147, ../sass/style.scss */
+/* line 150, ../sass/style.scss */
 .main_body .wonder:nth-child(7) {
   top: 148vh;
   left: 20vw;
   width: 20vw;
   height: 50vh;
 }
-/* line 154, ../sass/style.scss */
+/* line 157, ../sass/style.scss */
 .main_body .wonder:nth-child(8) {
   top: 181vh;
   left: 63vw;
   width: 30vw;
   height: 45vh;
 }
-/* line 161, ../sass/style.scss */
+/* line 164, ../sass/style.scss */
 .main_body .wonder:nth-child(9) {
   top: 140vh;
   left: 65vw;
   width: 30vw;
   height: 20vh;
 }
-/* line 168, ../sass/style.scss */
+/* line 171, ../sass/style.scss */
 .main_body .wonder:nth-child(10) {
   top: 109vh;
   left: 47vw;
   width: 20vw;
   height: 43vh;
 }
-/* line 140, ../sass/style.scss */
+/* line 143, ../sass/style.scss */
 .main_body .wonder:nth-child(11) {
   top: 210vh;
   left: 5vw;
   width: 30vw;
   height: 40vh;
 }
-/* line 147, ../sass/style.scss */
+/* line 150, ../sass/style.scss */
 .main_body .wonder:nth-child(12) {
   top: 248vh;
   left: 20vw;
   width: 20vw;
   height: 50vh;
 }
-/* line 154, ../sass/style.scss */
+/* line 157, ../sass/style.scss */
 .main_body .wonder:nth-child(13) {
   top: 281vh;
   left: 63vw;
   width: 30vw;
   height: 45vh;
 }
-/* line 161, ../sass/style.scss */
+/* line 164, ../sass/style.scss */
 .main_body .wonder:nth-child(14) {
   top: 240vh;
   left: 65vw;
   width: 30vw;
   height: 20vh;
 }
-/* line 168, ../sass/style.scss */
+/* line 171, ../sass/style.scss */
 .main_body .wonder:nth-child(15) {
   top: 209vh;
   left: 47vw;
   width: 20vw;
   height: 43vh;
 }
-/* line 140, ../sass/style.scss */
+/* line 143, ../sass/style.scss */
 .main_body .wonder:nth-child(16) {
   top: 310vh;
   left: 5vw;
   width: 30vw;
   height: 40vh;
 }
-/* line 147, ../sass/style.scss */
+/* line 150, ../sass/style.scss */
 .main_body .wonder:nth-child(17) {
   top: 348vh;
   left: 20vw;
   width: 20vw;
   height: 50vh;
 }
-/* line 154, ../sass/style.scss */
+/* line 157, ../sass/style.scss */
 .main_body .wonder:nth-child(18) {
   top: 381vh;
   left: 63vw;
   width: 30vw;
   height: 45vh;
 }
-/* line 161, ../sass/style.scss */
+/* line 164, ../sass/style.scss */
 .main_body .wonder:nth-child(19) {
   top: 340vh;
   left: 65vw;
   width: 30vw;
   height: 20vh;
 }
-/* line 168, ../sass/style.scss */
+/* line 171, ../sass/style.scss */
 .main_body .wonder:nth-child(20) {
   top: 309vh;
   left: 47vw;
@@ -358,14 +361,10 @@ body {
   height: 43vh;
 }
 
-/* line 178, ../sass/style.scss */
+/* line 181, ../sass/style.scss */
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
-}
-/* line 181, ../sass/style.scss */
-::-webkit-scrollbar:hover {
-  width: 20px;
 }
 
 /* line 185, ../sass/style.scss */
@@ -376,6 +375,5 @@ body {
 /* line 188, ../sass/style.scss */
 ::-webkit-scrollbar-thumb {
   background-color: transparent;
-  border: 2px solid #ccc;
-  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
 }
