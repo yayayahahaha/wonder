@@ -2,7 +2,117 @@
 $w: 100vw;
 $h: 100vh;
 
+$title_font_size:2em;
+$bar_btn_font_size:1.2em;
+$no: transparent;
+
 * {
 	margin: 0px;
 	padding: 0px;
+	font-family: arial;
+}
+
+@font-face {
+    font-family: RWBY;
+    src: url(https://dl.dropboxusercontent.com/u/92502085/rwby_style.ttf) format("truetype");
+}
+
+@mixin bar_hover{
+	&:hover{
+		@include transition(color 0.2s, transform 0.3s);
+		@include animation(shake 0.2s linear forwards);
+		color: #ccc;
+	}
+}
+@include keyframes (shake) {
+	0% {
+		@include transform(translateX(0px));
+	}
+	12.5%{
+		@include transform(translateX(-5px));
+	}
+	37.5% {
+		@include transform(translateX(5px));
+	}
+	62.5%{
+		@include transform(translateX(-5px));
+	}
+	100% {
+		@include transform(translateX(0px));
+	}
+}
+
+body{
+  @include background(linear-gradient(45deg, black, #333));
+  background-size: 100vw 100vh;
+  overflow: hidden;
+  color: snow;
+
+  @include box-sizing(border-box);
+}
+
+.header{
+	position: fixed;
+	display: inline-block;
+	text-align: left;
+
+	width: 100vw;
+	height: 5vh;
+
+	.title{
+		position: relative;
+		float: left;
+		height: 100%;
+		border: 3px solid transparent;
+		@include transition(outline 0.1s, border 0.1s);
+		cursor: pointer;
+		font-size: $title_font_size;
+		font-family: RWBY;
+		text-align: center;
+
+		@include bar_hover();
+
+		&:before{
+			content: '';
+			height: 100%;
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+
+	.about{
+		float: right;
+		height: 100%;
+		margin-right: 3vw;
+		cursor: pointer;
+
+		@include bar_hover();
+
+		font-size: $bar_btn_font_size;
+
+		&:before{
+			content: '';
+			height: 100%;
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+
+	.contact{
+		float: right;
+		height: 100%;
+		margin-right: 3vw;
+		cursor: pointer;
+
+		@include bar_hover();
+
+		font-size: $bar_btn_font_size;
+
+		&:before{
+			content: '';
+			height: 100%;
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
 }
