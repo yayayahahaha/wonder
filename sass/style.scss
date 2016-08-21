@@ -127,7 +127,13 @@ body{
 	.wonder{
 		position: absolute;
 		@include box-shadow(0px 0px 20px snow);
-		background-color: rgba(0,0,0,0.5);
+		@include transition(box-shadow 0.2s);
+		background-color: rgba(0,0,0,0.6);
+		cursor: pointer;
+
+		&:hover{
+			@include box-shadow(0px 0px 60px snow);
+		}
 	}
 	@for $i from 1 through 20 {
 		@if $i%5 == 1 {
@@ -146,24 +152,24 @@ body{
 			}
 		}@else if $i%5==3{
 			.wonder:nth-child(#{$i}){
-				top: 66vh + floor($i/5) * 100vh;
-				left: 70vw;
-				width: 17vw;
-				height: 60vh;
+				top: 81vh + floor($i/5) * 100vh;
+				left: 63vw;
+				width: 30vw;
+				height: 45vh;
 			}
 		}@else if $i%5==4{
 			.wonder:nth-child(#{$i}){
-				top: 12vh + floor($i/5) * 100vh;
+				top: 40vh + floor($i/5) * 100vh;
 				left: 65vw;
 				width: 30vw;
 				height: 20vh;
 			}
 		}@else{
 			.wonder:nth-child(#{$i}){
-				top: 20vh + (floor($i/5)-1) * 100vh;
+				top: 9vh + (floor($i/5)-1) * 100vh;
 				left: 47vw;
 				width: 20vw;
-				height: 30vh;
+				height: 43vh;
 			}
 		}
 	}
