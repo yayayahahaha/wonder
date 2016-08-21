@@ -5,6 +5,7 @@ $h: 100vh;
 $title_font_size:2em;
 $bar_btn_font_size:1.2em;
 $no: transparent;
+$team_rwby: "../R.jpg", "../W.jpg", "../B.jpg", "../Y.jpg";
 
 * {
 	margin: 0px;
@@ -48,7 +49,7 @@ body{
   overflow: hidden;
   color: snow;
 
-  @include box-sizing(border-box);
+  // @include box-sizing(border-box);
 }
 
 .header{
@@ -67,7 +68,7 @@ body{
 		@include transition(outline 0.1s, border 0.1s);
 		cursor: pointer;
 		font-size: $title_font_size;
-		font-family: RWBY;
+		font-family: arial;
 		text-align: center;
 
 		@include bar_hover();
@@ -115,4 +116,71 @@ body{
 			vertical-align: middle;
 		}
 	}
+}
+
+.main_body{
+	position: relative;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	top: 5vh;
+	height: 95vh;
+	.wonder{
+		position: absolute;
+		@include box-shadow(0px 0px 20px snow);
+		background-color: rgba(0,0,0,0.5);
+	}
+	@for $i from 1 through 20 {
+		@if $i%5 == 1 {
+			.wonder:nth-child(#{$i}){
+				top: 10 + floor($i/5) * 100vh;
+				left: 5vw;
+				width: 30vw;
+				height: 40vh;
+			}
+		}@else if $i%5==2{
+			.wonder:nth-child(#{$i}){
+				top: 48vh + floor($i/5) * 100vh;
+				left: 20vw;
+				width: 20vw;
+				height: 50vh;
+			}
+		}@else if $i%5==3{
+			.wonder:nth-child(#{$i}){
+				top: 66vh + floor($i/5) * 100vh;
+				left: 70vw;
+				width: 17vw;
+				height: 60vh;
+			}
+		}@else if $i%5==4{
+			.wonder:nth-child(#{$i}){
+				top: 12vh + floor($i/5) * 100vh;
+				left: 65vw;
+				width: 30vw;
+				height: 20vh;
+			}
+		}@else{
+			.wonder:nth-child(#{$i}){
+				top: 20vh + (floor($i/5)-1) * 100vh;
+				left: 47vw;
+				width: 20vw;
+				height: 30vh;
+			}
+		}
+	}
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+	&:hover{
+		width: 20px;
+	}
+}
+::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+	background-color: transparent;
+	border: 2px solid #ccc;
+	border-radius: 4px;
 }
