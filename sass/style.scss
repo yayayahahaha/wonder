@@ -230,6 +230,41 @@ body{
 	}
 }
 
+.loading{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content:center;
+	align-items:center;
+	background: black;
+	@include transition(opacity 0.3s);
+
+	.line{
+		width: 30%;
+		height: 30%;
+		border-radius: 50%;
+
+		border-width: 0px 10px 0px 10px;
+		border-color: _opacity_color(255,0.6);
+		border-style: solid;
+		@include animation(loading_animation 1s linear infinite);
+	}
+}
+@include keyframes(loading_animation) {
+	0%{
+		@include transform(rotateZ(0deg));
+	}
+	50%{
+		@include transform(rotateZ(180deg));
+	}
+	100%{
+		@include transform(rotateZ(360deg));
+	}
+}
+
 .egg{
 	position: fixed;
 	top: 50vh;

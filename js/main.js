@@ -139,6 +139,11 @@ window.onload = function() {
 			loaded_images++;
 			if (loaded_images == total) {
 				console.log("done!");
+				document.getElementsByClassName('loading')[0].style.opacity = 0;
+				setTimeout(function() {
+					document.getElementsByClassName('loading')[0].style.display = "none";
+					document.getElementsByClassName('loading')[0].innerHTML = "";
+				}, 200);
 			}else{
 				// console.log((loaded_images*100/total)+"%");
 			}
