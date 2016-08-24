@@ -25,6 +25,11 @@ $team_rwby: "../R.jpg", "../W.jpg", "../B.jpg", "../Y.jpg";
 		color: #ccc;
 	}
 }
+
+@function _opacity_color($main, $opacity){
+	@return rgba($main,$main,$main,$opacity);
+}
+
 @include keyframes (shake) {
 	0% {
 		@include transform(translateX(0px));
@@ -138,7 +143,7 @@ body{
 		height: 100%;
 		@include box-shadow(0px 0px 20px snow);
 		@include transition(box-shadow 0.2s);
-		background-color: rgba(0,0,0,0.6);
+		background-color: _opacity_color(0,0.6);
 		cursor: pointer;
 
 		&:hover{
@@ -195,13 +200,115 @@ body{
 		width: 100%;
 		height: 100%;
 		@include box-shadow(0px 0px 20px snow);
-		background-color: rgba(0,0,0,0.8);
+		background-color: _opacity_color(0, 0.8);
 		border-radius: 50%;
 		@include transition(all 0.5s);
 		&:hover{
 			cursor: pointer;
 			border-radius: 0px;
 			background: snow;
+		}
+	}
+}
+
+.detail{
+	position: fixed;
+	top:0px;
+	width: 100vw;
+	height:100vh;
+	background-color:_opacity_color(0, 0.8);
+
+	display: flex;
+	align-items:center;
+	justify-content:center;
+
+	._block{
+		position: relative;
+		top: 0px;
+		width: 80%;
+		height: 80%;
+		background-color: _opacity_color(255,0.5);
+
+		display: flex;
+		justify-content:space-around;
+		align-items:center;
+		@include box-shadow(0px 0px 20px black inset);
+
+		._img{
+			width: 60%;
+			height: 80%;
+			background-image:url(unquote(nth($team_rwby, 1)));
+			@include box-shadow(0px 0px 60px 30px black inset);
+			@include transition(box-shadow 0.2s);
+			&:hover{
+				@include box-shadow(0px 0px 0px 0px black inset);
+			}
+		}
+		._cover{
+			display: flex;
+			flex-direction:column;
+			justify-content:space-around;
+			align-items:center;
+			width: 30%;
+			height: 80%;
+
+			._content{
+				display: flex;
+				justify-content:center;
+				align-items:center;
+
+				text-align: justify;
+				width: 100%;
+				height: 100%;
+				margin: 5%;
+				padding:5%;
+				background-color: _opacity_color(255,0.3);
+				@include box-shadow(0px 0px 20px black);
+			}
+			.preview_btn{
+				display: flex;
+				justify-content:center;
+				align-items:center;
+				background-color: _opacity_color(255,0.3);
+				@include box-shadow(0px 0px 20px black);
+				width: 100px;
+				height: 100px;
+				cursor: pointer;
+			}
+		}
+	}
+	._back{
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		width: 5vw;
+		height: 5vw;
+		&:hover{
+			@include transition(transform 0.2s);
+			@include transform(rotateZ(90deg));
+			cursor: pointer;
+		}
+		&:after{
+			position: absolute;
+			top: 0px;
+			right: 45%;
+			content: '';
+			background-color: _opacity_color(255,1);
+			display: inline-block;
+			width: 10%;
+			height: 100%;
+			@include transform(rotateZ(45deg));
+		}
+		&:before{
+			position: absolute;
+			top: 0px;
+			left: 45%;
+			content: '';
+			background-color: _opacity_color(255,1);
+			display: inline-block;
+			width: 10%;
+			height: 100%;
+			@include transform(rotateZ(-45deg));
 		}
 	}
 }
