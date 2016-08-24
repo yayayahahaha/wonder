@@ -4,7 +4,7 @@ $h: 100vh;
 
 $title_font_size:2em;
 $bar_btn_font_size:1.2em;
-$no: transparent;
+$n: transparent;
 $team_rwby: "../R.jpg", "../W.jpg", "../B.jpg", "../Y.jpg";
 
 * {
@@ -217,6 +217,8 @@ body{
 	width: 100vw;
 	height:100vh;
 	background-color:_opacity_color(0, 0.8);
+	z-index: -3;
+	opacity: 0;
 
 	display: flex;
 	align-items:center;
@@ -311,6 +313,10 @@ body{
 			@include transform(rotateZ(-45deg));
 		}
 	}
+}
+
+._onclick{
+	@include box-shadow(0px 0px 60px $n);
 }
 
 .to_top{

@@ -1,4 +1,26 @@
 window.onload = function() {
+	/* this function include to_top_btn part */
+	parallax_create();
+
+	var wonders = document.getElementsByClassName('wonder');
+	for (key in wonders) {
+		var tempI = parseInt(key);
+		if (key != "length") {
+				console.log(key);
+			(function(tempI) {
+				console.log("this");
+				wonders[key].onclick = function() {
+					console.log(tempI);
+				}
+			})();
+		}else{
+			break;
+		}
+	}
+
+}
+
+function parallax_create() {
 	var scene = document.getElementsByClassName('scene');
 	var parallaxs = [];
 	var main_body = $("#main_body"),
@@ -29,6 +51,7 @@ window.onload = function() {
 		frictionY: 0.03
 	}));
 
+	/* start to_top_part */
 	main_body.mousewheel(function(e) {
 		if (e.deltaY == 1) {
 			if (main_body.scrollTop() - e.deltaFactor <= 0) {
@@ -45,7 +68,8 @@ window.onload = function() {
 		main_body.animate({
 				scrollTop: 0
 			},
-			400,function(){
+			400,
+			function() {
 				to_top.style.opacity = 0;
 			});
 	}
