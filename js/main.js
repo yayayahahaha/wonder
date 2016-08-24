@@ -1,23 +1,63 @@
+var wonders_detail = [{
+	"name": "Name",
+	"image_source": "http:",
+	"url": "http",
+	"content": ""
+}, {
+	"name": "Name",
+	"image_source": "http:",
+	"url": "http",
+	"content": ""
+}, {
+	"name": "Name",
+	"image_source": "http:",
+	"url": "http",
+	"content": ""
+}, {
+	"name": "Name",
+	"image_source": "http:",
+	"url": "http",
+	"content": ""
+}, {
+	"name": "Name",
+	"image_source": "http:",
+	"url": "http",
+	"content": ""
+}];
+
 window.onload = function() {
-	/* this function include to_top_btn part */
+	/* this parallax_create() function include to_top_btn part */
 	parallax_create();
 
-	var wonders = document.getElementsByClassName('wonder');
+	/* create wonder click event */
+	var wonders = document.getElementsByClassName('wonder'),
+		detail = document.getElementById('detail'),
+		back = document.getElementById('back'),
+		_block_items = [document.getElementById('_img'), document.getElementById('_content'), document.getElementById('_preview_btn')];
 	for (key in wonders) {
-		var tempI = parseInt(key);
-		if (key != "length") {
-				console.log(key);
-			(function(tempI) {
-				console.log("this");
-				wonders[key].onclick = function() {
-					console.log(tempI);
-				}
-			})();
-		}else{
-			break;
-		}
+		create_wonder_click_event(wonders[key], parseInt(key), detail);
 	}
 
+	function create_wonder_click_event(wonder, number, detail) {
+		wonder.onclick = function() {
+			detail.style.opacity = 1;
+			detail.style.zIndex = 1;
+			_block_items.forEach(function(item) {
+				item.style.transform = "translateX(0px)";
+				item.style.opacity = 1;
+			});
+		}
+	}
+	back.onclick = function() {
+		detail.style.opacity = 0;
+		_block_items.forEach(function(item) {
+			item.style.transform = "translateX(-50px)";
+			item.style.opacity = 0;
+		})
+		setTimeout(function() {
+			detail.style.zIndex = -2;
+		}, 150);
+	}
 }
 
 function parallax_create() {
