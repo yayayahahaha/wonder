@@ -15,102 +15,102 @@ var wonders_detail = [{
 	"name": "Ruby",
 	"image_source": team_rwby["ruby"],
 	"url": "http",
-	"content": ""
+	"content": "Ruby Rose"
 }, {
 	"name": "Weiss",
 	"image_source": team_rwby["weiss"],
 	"url": "http",
-	"content": ""
+	"content": "Weiss Schnee"
 }, {
 	"name": "Blake",
 	"image_source": team_rwby["blake"],
 	"url": "http",
-	"content": ""
+	"content": "Blake Belladona"
 }, {
 	"name": "Yang",
 	"image_source": team_rwby["yang"],
 	"url": "http",
-	"content": ""
+	"content": "Yang Xio Long"
 }, {
 	"name": "Ruby",
 	"image_source": team_rwby["ruby"],
 	"url": "http",
-	"content": ""
+	"content": "Ruby Rose"
 }, {
 	"name": "Weiss",
 	"image_source": team_rwby["weiss"],
 	"url": "http",
-	"content": ""
+	"content": "Weiss Schnee"
 }, {
 	"name": "Blake",
 	"image_source": team_rwby["blake"],
 	"url": "http",
-	"content": ""
+	"content": "Blake Belladona"
 }, {
 	"name": "Yang",
 	"image_source": team_rwby["yang"],
 	"url": "http",
-	"content": ""
+	"content": "Yang Xio Long"
 }, {
 	"name": "Ruby",
 	"image_source": team_rwby["ruby"],
 	"url": "http",
-	"content": ""
+	"content": "Ruby Rose"
 }, {
 	"name": "Weiss",
 	"image_source": team_rwby["weiss"],
 	"url": "http",
-	"content": ""
+	"content": "Weiss Schnee"
 }, {
 	"name": "Blake",
 	"image_source": team_rwby["blake"],
 	"url": "http",
-	"content": ""
+	"content": "Blake Belladona"
 }, {
 	"name": "Yang",
 	"image_source": team_rwby["yang"],
 	"url": "http",
-	"content": ""
+	"content": "Yang Xio Long"
 }, {
 	"name": "Ruby",
 	"image_source": team_rwby["ruby"],
 	"url": "http",
-	"content": ""
+	"content": "Ruby Rose"
 }, {
 	"name": "Weiss",
 	"image_source": team_rwby["weiss"],
 	"url": "http",
-	"content": ""
+	"content": "Weiss Schnee"
 }, {
 	"name": "Blake",
 	"image_source": team_rwby["blake"],
 	"url": "http",
-	"content": ""
+	"content": "Blake Belladona"
 }, {
 	"name": "Yang",
 	"image_source": team_rwby["yang"],
 	"url": "http",
-	"content": ""
+	"content": "Yang Xio Long"
 }, {
 	"name": "Ruby",
 	"image_source": team_rwby["ruby"],
 	"url": "http",
-	"content": ""
+	"content": "Ruby Rose"
 }, {
 	"name": "Ruby",
 	"image_source": team_rwby["ruby"],
 	"url": "http",
-	"content": ""
+	"content": "Ruby Rose"
 }, {
 	"name": "Weiss",
 	"image_source": team_rwby["weiss"],
 	"url": "http",
-	"content": ""
+	"content": "Weiss Schnee"
 }, {
 	"name": "Blake",
 	"image_source": team_rwby["blake"],
 	"url": "http",
-	"content": ""
+	"content": "Blake Belladona"
 }];
 
 window.onload = function() {
@@ -122,8 +122,14 @@ window.onload = function() {
 		to_top = document.getElementById('to_top'),
 		loaded_images = 0;
 
+	var wonders = document.getElementsByClassName('wonder'),
+		detail = document.getElementById('detail'),
+		back = document.getElementById('back'),
+		_block_items = [document.getElementById('_img'), document.getElementById('_content'), document.getElementById('_preview_btn')];
+
 	for (var i = 0; i < wonders_detail.length; i++) {
 		scene[i].getElementsByTagName('p')[0].innerHTML = wonders_detail[i].name;
+
 		load_image(scene[i].getElementsByTagName('img')[0], wonders_detail[i].image_source, i, wonders_detail.length);
 	}
 	function load_image(img, src, number, total) {
@@ -143,10 +149,7 @@ window.onload = function() {
 	parallax_create(scene, parallaxs, main_body);
 
 	/* create wonder click event */
-	var wonders = document.getElementsByClassName('wonder'),
-		detail = document.getElementById('detail'),
-		back = document.getElementById('back'),
-		_block_items = [document.getElementById('_img'), document.getElementById('_content'), document.getElementById('_preview_btn')];
+
 	for (key in wonders) {
 		create_wonder_click_event(wonders[key], parseInt(key), detail);
 	}
@@ -156,7 +159,9 @@ window.onload = function() {
 	function create_wonder_click_event(wonder, number, detail) {
 		wonder.onclick = function() {
 			console.log(this.getElementsByTagName('img')[0]);
-			this.getElementsByTagName('img')[0].src = wonders_detail[count % 4].image_source;
+			// this.getElementsByTagName('img')[0].src = wonders_detail[count % 4].image_source;
+			detail.getElementsByClassName('_img')[0].style.background = "url("+this.getElementsByTagName('img')[0].src+")";
+			detail.getElementsByClassName('_content')[0].innerHTML = wonders_detail[number].content;
 			count++;
 
 			detail.style.opacity = 1;
