@@ -4,36 +4,143 @@ step2: put each image to each wonder
 step3: try change _img when click wonder without reload
  */
 
+var team_rwby = {
+	"ruby": "http://puu.sh/oXDLO/7b5a932ef1.jpg",
+	"weiss": "http://puu.sh/oXDNd/169a74d36c.jpg",
+	"blake": "http://puu.sh/oXDNQ/bec8c790e4.jpg",
+	"yang": "http://puu.sh/oXDO9/3c169032d0.jpg"
+};
+
 var wonders_detail = [{
-	"name": "Name",
-	"image_source": "http:",
+	"name": "Ruby",
+	"image_source": team_rwby["ruby"],
 	"url": "http",
 	"content": ""
 }, {
-	"name": "Name",
-	"image_source": "http:",
+	"name": "Weiss",
+	"image_source": team_rwby["weiss"],
 	"url": "http",
 	"content": ""
 }, {
-	"name": "Name",
-	"image_source": "http:",
+	"name": "Blake",
+	"image_source": team_rwby["blake"],
 	"url": "http",
 	"content": ""
 }, {
-	"name": "Name",
-	"image_source": "http:",
+	"name": "Yang",
+	"image_source": team_rwby["yang"],
 	"url": "http",
 	"content": ""
 }, {
-	"name": "Name",
-	"image_source": "http:",
+	"name": "Ruby",
+	"image_source": team_rwby["ruby"],
+	"url": "http",
+	"content": ""
+}, {
+	"name": "Weiss",
+	"image_source": team_rwby["weiss"],
+	"url": "http",
+	"content": ""
+}, {
+	"name": "Blake",
+	"image_source": team_rwby["blake"],
+	"url": "http",
+	"content": ""
+}, {
+	"name": "Yang",
+	"image_source": team_rwby["yang"],
+	"url": "http",
+	"content": ""
+}, {
+	"name": "Ruby",
+	"image_source": team_rwby["ruby"],
+	"url": "http",
+	"content": ""
+}, {
+	"name": "Weiss",
+	"image_source": team_rwby["weiss"],
+	"url": "http",
+	"content": ""
+}, {
+	"name": "Blake",
+	"image_source": team_rwby["blake"],
+	"url": "http",
+	"content": ""
+}, {
+	"name": "Yang",
+	"image_source": team_rwby["yang"],
+	"url": "http",
+	"content": ""
+}, {
+	"name": "Ruby",
+	"image_source": team_rwby["ruby"],
+	"url": "http",
+	"content": ""
+}, {
+	"name": "Weiss",
+	"image_source": team_rwby["weiss"],
+	"url": "http",
+	"content": ""
+}, {
+	"name": "Blake",
+	"image_source": team_rwby["blake"],
+	"url": "http",
+	"content": ""
+}, {
+	"name": "Yang",
+	"image_source": team_rwby["yang"],
+	"url": "http",
+	"content": ""
+}, {
+	"name": "Ruby",
+	"image_source": team_rwby["ruby"],
+	"url": "http",
+	"content": ""
+}, {
+	"name": "Ruby",
+	"image_source": team_rwby["ruby"],
+	"url": "http",
+	"content": ""
+}, {
+	"name": "Weiss",
+	"image_source": team_rwby["weiss"],
+	"url": "http",
+	"content": ""
+}, {
+	"name": "Blake",
+	"image_source": team_rwby["blake"],
 	"url": "http",
 	"content": ""
 }];
 
 window.onload = function() {
+	/* images loader  */
+	var images = [],
+		scene = document.getElementsByClassName('scene'),
+		parallaxs = [],
+		main_body = $("#main_body"),
+		to_top = document.getElementById('to_top'),
+		loaded_images = 0;
+
+	for (var i = 0; i < wonders_detail.length; i++) {
+		scene[i].getElementsByTagName('p')[0].innerHTML = wonders_detail[i].name;
+		load_image(scene[i].getElementsByTagName('img')[0], wonders_detail[i].image_source, i, wonders_detail.length);
+	}
+	function load_image(img, src, number, total) {
+		img.src = src;
+		images.push(img);
+		img.onload = function() {
+			loaded_images++;
+			if (loaded_images == total) {
+				console.log("done!");
+			}else{
+				// console.log((loaded_images*100/total)+"%");
+			}
+		}
+	}
+
 	/* this parallax_create() function include to_top_btn part */
-	parallax_create();
+	parallax_create(scene, parallaxs, main_body);
 
 	/* create wonder click event */
 	var wonders = document.getElementsByClassName('wonder'),
@@ -44,8 +151,14 @@ window.onload = function() {
 		create_wonder_click_event(wonders[key], parseInt(key), detail);
 	}
 
+	count = 0;
+
 	function create_wonder_click_event(wonder, number, detail) {
 		wonder.onclick = function() {
+			console.log(this.getElementsByTagName('img')[0]);
+			this.getElementsByTagName('img')[0].src = wonders_detail[count % 4].image_source;
+			count++;
+
 			detail.style.opacity = 1;
 			detail.style.zIndex = 1;
 			_block_items.forEach(function(item) {
@@ -66,11 +179,8 @@ window.onload = function() {
 	}
 }
 
-function parallax_create() {
-	var scene = document.getElementsByClassName('scene');
-	var parallaxs = [];
-	var main_body = $("#main_body"),
-		to_top = document.getElementById('to_top');
+function parallax_create(scene, parallaxs, main_body) {
+
 
 	for (var i = 0; i < scene.length; i++) {
 		var parallax = new Parallax(scene[i], {
