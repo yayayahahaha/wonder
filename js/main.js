@@ -145,7 +145,7 @@ window.onload = function() {
 		img.onload = function() {
 			loaded_images++;
 			if (loaded_images == total) {
-				console.log("done!");
+				// console.log("done!");
 				document.getElementsByClassName('loading')[0].style.opacity = 0;
 				setTimeout(function() {
 					document.getElementsByClassName('loading')[0].style.display = "none";
@@ -167,7 +167,7 @@ window.onload = function() {
 
 	function create_wonder_click_event(wonder, number, detail) {
 		wonder.onclick = function() {
-			console.log(this.getElementsByTagName('img')[0]);
+			// console.log(this.getElementsByTagName('img')[0]);
 			detail.getElementsByClassName('_img')[0].style.background = "url(" + this.getElementsByTagName('img')[0].src + ")";
 			detail.getElementsByClassName('_content')[0].innerHTML = wonders_detail[number].content;
 
