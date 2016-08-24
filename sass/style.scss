@@ -431,10 +431,20 @@ body{
 		border-radius: 50%;
 		@include transition(all 0.5s);
 		&:hover{
-			cursor: pointer;
-			border-radius: 0px;
 			background: snow;
+			@include animation(egg_an 1s infinite);
 		}
+	}
+}
+@include keyframes(egg_an) {
+	0%{
+		@include box-shadow(0px 0px 20px _opacity_color(255,1));
+	}
+	50%{
+		@include box-shadow(0px 0px 60px _opacity_color(255,0.5));
+	}
+	100%{
+		@include box-shadow(0px 0px 60px $n);
 	}
 }
 
