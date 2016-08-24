@@ -491,7 +491,7 @@ body {
 /* line 292, ../sass/style.scss */
 .creater_body {
   position: fixed;
-  top: 0vh;
+  top: 5vh;
   left: 0px;
   z-index: 30;
   border: 3px solid red;
@@ -721,21 +721,22 @@ body {
   height: 60px;
   color: snow;
   opacity: 0;
+  z-index: 50;
   -moz-box-shadow: 0px 0px 10px snow;
   -webkit-box-shadow: 0px 0px 10px snow;
   box-shadow: 0px 0px 10px snow;
-  -moz-transition: opacity 0.2s;
-  -o-transition: opacity 0.2s;
-  -webkit-transition: opacity 0.2s;
-  transition: opacity 0.2s;
+  -moz-transition: opacity 0.2s, -moz-transform 0.4s;
+  -o-transition: opacity 0.2s, -o-transform 0.4s;
+  -webkit-transition: opacity 0.2s, -webkit-transform 0.4s;
+  transition: opacity 0.2s, transform 0.4s;
 }
-/* line 464, ../sass/style.scss */
+/* line 465, ../sass/style.scss */
 .to_top:hover:after {
   -moz-animation: top_animation 0.2s linear forwards;
   -webkit-animation: top_animation 0.2s linear forwards;
   animation: top_animation 0.2s linear forwards;
 }
-/* line 468, ../sass/style.scss */
+/* line 469, ../sass/style.scss */
 .to_top:after {
   cursor: pointer;
   content: 'Back';
@@ -843,18 +844,18 @@ body {
     transform: rotateZ(360deg);
   }
 }
-/* line 506, ../sass/style.scss */
+/* line 507, ../sass/style.scss */
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
 
-/* line 510, ../sass/style.scss */
+/* line 511, ../sass/style.scss */
 ::-webkit-scrollbar-track {
   background-color: transparent;
 }
 
-/* line 513, ../sass/style.scss */
+/* line 514, ../sass/style.scss */
 ::-webkit-scrollbar-thumb {
   background-color: transparent;
   border: 1px solid white;

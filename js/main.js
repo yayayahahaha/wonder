@@ -180,45 +180,73 @@ window.onload = function() {
 		}
 	}
 
+
+
 	main_btn.onclick = function() {
 		if (now_at == 2) {
-			main_body.css({
-				zIndex: 1,
-				left: '0vw'
+			about_body.css({
+				zIndex: -1,
+				transform: 'translateX(100vw)'
+			});
+		} else if (now_at == 3) {
+			creater_body.css({
+				zIndex: -1,
+				transform: 'translateX(100vw)'
 			});
 			about_body.css({
 				zIndex: -1,
 				transform: 'translateX(100vw)'
 			});
 		}
+		to_top.style.transform = "translateX(0vw)"
+		main_body.css({
+			zIndex: 1,
+			left: '0vw'
+		});
 
 		now_at = 1;
 	}
 	about_btn.onclick = function() {
 		if (now_at == 1) {
+			to_top.style.transform = "translateX(-100vw)"
+			main_body.css({
+				zIndex: -1,
+				left: '-100vw'
+			});
+		} else if (now_at == 3) {
+			creater_body.css({
+				zIndex: -1,
+				transform: 'translateX(100vw)'
+			});
+		}
+		about_body.css({
+			zIndex: 1,
+			transform: 'translateX(0vw)'
+		});
+
+		now_at = 2;
+	}
+	creater_btn.onclick = function() {
+		if (now_at == 2) {
+			about_body.css({
+				zIndex: -1,
+				transform: 'translateX(-100vw)'
+			});
+		} else if (now_at == 1) {
+			to_top.style.transform = "translateX(-100vw)"
 			main_body.css({
 				zIndex: -1,
 				left: '-100vw'
 			});
 			about_body.css({
-				zIndex: 1,
-				transform: 'translateX(0vw)'
-			});
-		}
-
-		now_at = 2;
-	}
-	creater_btn.onclick = function() {
-		if (now_at == 1) {
-			main_body.css({
 				zIndex: -1,
-				left: '-100vw'
-			});
-			creater_body.css({
-				zIndex: 3,
-				transform: 'translateX(0vw)'
+				transform: 'translateX(-100vw)'
 			});
 		}
+		creater_body.css({
+			zIndex: 1,
+			transform: 'translateX(0vw)'
+		});
 
 		now_at = 3;
 	}
