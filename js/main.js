@@ -1,3 +1,9 @@
+/* create image loader, 
+step1: load all images
+step2: put each image to each wonder
+step3: try change _img when click wonder without reload
+ */
+
 var wonders_detail = [{
 	"name": "Name",
 	"image_source": "http:",
