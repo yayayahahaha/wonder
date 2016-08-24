@@ -247,7 +247,7 @@ body{
 			}
 
 			opacity: 0;
-			@include transition(transform 0.3s 0.1s, opacity 0.3s 0.1s);
+			@include transition(box-shadow 0.2s,transform 0.3s 0.1s, opacity 0.3s 0.1s);
 			@include transform(translateX(-50px), box-shadow 0.2s);
 		}
 		._cover{
