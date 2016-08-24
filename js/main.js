@@ -119,9 +119,11 @@ window.onload = function() {
 		scene = document.getElementsByClassName('scene'),
 		parallaxs = [],
 		main_body = $("#main_body"),
-		main_body_btn = document.getElementsByClassName('title')[0],
+		main_btn = document.getElementsByClassName('title')[0],
 		about_body = $("#about_body"),
-		about_body_btn = document.getElementsByClassName('about')[0],
+		about_btn = document.getElementsByClassName('about')[0],
+		creater_body = $("#creater_body"),
+		creater_btn = document.getElementsByClassName('creater')[0],
 		now_at = 1,
 		to_top = document.getElementById('to_top'),
 		loaded_images = 0;
@@ -178,33 +180,47 @@ window.onload = function() {
 		}
 	}
 
-	about_body_btn.onclick = function() {
+	main_btn.onclick = function() {
+		if (now_at == 2) {
+			main_body.css({
+				zIndex: 1,
+				left: '0vw'
+			});
+			about_body.css({
+				zIndex: -1,
+				transform: 'translateX(100vw)'
+			});
+		}
+
+		now_at = 1;
+	}
+	about_btn.onclick = function() {
 		if (now_at == 1) {
 			main_body.css({
-				zIndex:-1,
+				zIndex: -1,
 				left: '-100vw'
 			});
 			about_body.css({
-				zIndex:3,
+				zIndex: 1,
 				transform: 'translateX(0vw)'
 			});
 		}
 
 		now_at = 2;
 	}
-	main_body_btn.onclick = function() {
-		if (now_at == 2) {
+	creater_btn.onclick = function() {
+		if (now_at == 1) {
 			main_body.css({
-				zIndex:1,
-				left: '0vw'
+				zIndex: -1,
+				left: '-100vw'
 			});
-			about_body.css({
-				zIndex:-1,
-				transform: 'translateX(100vw)'
+			creater_body.css({
+				zIndex: 3,
+				transform: 'translateX(0vw)'
 			});
 		}
 
-		now_at = 1;
+		now_at = 3;
 	}
 
 	back.onclick = function() {
