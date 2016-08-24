@@ -119,6 +119,10 @@ window.onload = function() {
 		scene = document.getElementsByClassName('scene'),
 		parallaxs = [],
 		main_body = $("#main_body"),
+		main_body_btn = document.getElementsByClassName('title')[0],
+		about_body = $("#about_body"),
+		about_body_btn = document.getElementsByClassName('about')[0],
+		now_at = 1,
 		to_top = document.getElementById('to_top'),
 		loaded_images = 0;
 
@@ -132,6 +136,7 @@ window.onload = function() {
 
 		load_image(scene[i].getElementsByTagName('img')[0], wonders_detail[i].image_source, i, wonders_detail.length);
 	}
+
 	function load_image(img, src, number, total) {
 		img.src = src;
 		images.push(img);
@@ -144,8 +149,8 @@ window.onload = function() {
 					document.getElementsByClassName('loading')[0].style.display = "none";
 					document.getElementsByClassName('loading')[0].innerHTML = "";
 				}, 200);
-			}else{
-				// console.log((loaded_images*100/total)+"%");
+			} else {
+				document.getElementsByClassName('persent')[0].innerHTML = loaded_images * 100 / total + " %";
 			}
 		}
 	}
@@ -154,20 +159,15 @@ window.onload = function() {
 	parallax_create(scene, parallaxs, main_body);
 
 	/* create wonder click event */
-
 	for (key in wonders) {
 		create_wonder_click_event(wonders[key], parseInt(key), detail);
 	}
 
-	count = 0;
-
 	function create_wonder_click_event(wonder, number, detail) {
 		wonder.onclick = function() {
 			console.log(this.getElementsByTagName('img')[0]);
-			// this.getElementsByTagName('img')[0].src = wonders_detail[count % 4].image_source;
-			detail.getElementsByClassName('_img')[0].style.background = "url("+this.getElementsByTagName('img')[0].src+")";
+			detail.getElementsByClassName('_img')[0].style.background = "url(" + this.getElementsByTagName('img')[0].src + ")";
 			detail.getElementsByClassName('_content')[0].innerHTML = wonders_detail[number].content;
-			count++;
 
 			detail.style.opacity = 1;
 			detail.style.zIndex = 1;
@@ -177,6 +177,36 @@ window.onload = function() {
 			});
 		}
 	}
+
+	about_body_btn.onclick = function() {
+		if (now_at == 1) {
+			main_body.css({
+				zIndex:-1,
+				left: '-100vw'
+			});
+			about_body.css({
+				zIndex:3,
+				transform: 'translateX(0vw)'
+			});
+		}
+
+		now_at = 2;
+	}
+	main_body_btn.onclick = function() {
+		if (now_at == 2) {
+			main_body.css({
+				zIndex:1,
+				left: '0vw'
+			});
+			about_body.css({
+				zIndex:-1,
+				transform: 'translateX(100vw)'
+			});
+		}
+
+		now_at = 1;
+	}
+
 	back.onclick = function() {
 		detail.style.opacity = 0;
 		_block_items.forEach(function(item) {

@@ -133,7 +133,10 @@ body{
 	overflow-x: hidden;
 	overflow-y: scroll;
 	top: 5vh;
+	left: 0px;
 	height: 95vh;
+	@include transition(left 0.4s);
+
 	.scene{
 		position: absolute;
 	}
@@ -237,9 +240,12 @@ body{
 	width: 100vw;
 	height: 100vh;
 	display: flex;
+	flex-direction: column;
 	justify-content:center;
 	align-items:center;
 	background: black;
+	font-size: 2em;
+
 	@include transition(opacity 0.3s);
 
 	.line{
@@ -253,15 +259,33 @@ body{
 		@include animation(loading_animation 1s linear infinite);
 	}
 }
-@include keyframes(loading_animation) {
-	0%{
-		@include transform(rotateZ(0deg));
+
+.about_body{
+	z-index: -3;
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	top: 5vh;
+	left: 0px;
+	@include transform(translateX(100vw));
+	@include transition(transform 0.4s);
+	font-size: 1.5em;
+	color: snow;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	text-align: center;
+
+	
+	.about_content{
+		// height: 150vh;
 	}
-	50%{
-		@include transform(rotateZ(180deg));
+
+	p{
+		color: gray;
 	}
-	100%{
-		@include transform(rotateZ(360deg));
+
+	img{
+		width: 60%;
 	}
 }
 
@@ -450,7 +474,17 @@ body{
 		content: 'Top';
 	}
 }
-
+@include keyframes(loading_animation) {
+	0%{
+		@include transform(rotateZ(0deg));
+	}
+	50%{
+		@include transform(rotateZ(180deg));
+	}
+	100%{
+		@include transform(rotateZ(360deg));
+	}
+}
 ::-webkit-scrollbar {
 	width: 10px;
 	height: 10px;
