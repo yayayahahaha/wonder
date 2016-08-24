@@ -122,8 +122,8 @@ window.onload = function() {
 		main_btn = document.getElementsByClassName('title')[0],
 		about_body = $("#about_body"),
 		about_btn = document.getElementsByClassName('about')[0],
-		creater_body = $("#creater_body"),
-		creater_btn = document.getElementsByClassName('creater')[0],
+		creator_body = $("#creator_body"),
+		creator_btn = document.getElementsByClassName('creator')[0],
 		now_at = 1,
 		to_top = document.getElementById('to_top'),
 		loaded_images = 0;
@@ -189,7 +189,7 @@ window.onload = function() {
 				transform: 'translateX(100vw)'
 			});
 		} else if (now_at == 3) {
-			creater_body.css({
+			creator_body.css({
 				zIndex: -1,
 				transform: 'translateX(100vw)'
 			});
@@ -214,7 +214,7 @@ window.onload = function() {
 				left: '-100vw'
 			});
 		} else if (now_at == 3) {
-			creater_body.css({
+			creator_body.css({
 				zIndex: -1,
 				transform: 'translateX(100vw)'
 			});
@@ -226,7 +226,7 @@ window.onload = function() {
 
 		now_at = 2;
 	}
-	creater_btn.onclick = function() {
+	creator_btn.onclick = function() {
 		if (now_at == 2) {
 			about_body.css({
 				zIndex: -1,
@@ -243,7 +243,7 @@ window.onload = function() {
 				transform: 'translateX(-100vw)'
 			});
 		}
-		creater_body.css({
+		creator_body.css({
 			zIndex: 1,
 			transform: 'translateX(0vw)'
 		});
