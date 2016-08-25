@@ -246,7 +246,7 @@ body{
 	background: black;
 	font-size: 2em;
 
-	@include transition(opacity 0.3s);
+	@include transition(opacity 0.4s);
 
 	.line{
 		width: 30%;

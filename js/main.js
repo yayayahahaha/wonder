@@ -150,7 +150,7 @@ window.onload = function() {
 				setTimeout(function() {
 					document.getElementsByClassName('loading')[0].style.display = "none";
 					document.getElementsByClassName('loading')[0].innerHTML = "";
-				}, 200);
+				}, 300);
 			} else {
 				document.getElementsByClassName('persent')[0].innerHTML = loaded_images * 100 / total + " %";
 			}
@@ -170,13 +170,9 @@ window.onload = function() {
 			// console.log(this.getElementsByTagName('img')[0]);
 			detail.getElementsByClassName('_img')[0].style.backgroundImage = "url(" + this.getElementsByTagName('img')[0].src + ")";
 			detail.getElementsByClassName('_content')[0].innerHTML = wonders_detail[number].content;
-			$('#_preview_btn').prop("onclick", null);
-			$('#_preview_btn').click(function(event) {
+			_block_items[2].onclick = function() {
 				window.open(wonders_detail[number].url, '_blank');
-			});
-/*			$('#_preview_btn').on("click", function() {
-				window.open(wonders_detail[number].url, '_blank');
-			});*/
+			}
 
 			detail.style.opacity = 1;
 			detail.style.zIndex = 1;
