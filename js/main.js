@@ -17,99 +17,99 @@ var wonders_detail = [{
 	"url": "wonder/BezierLine/index.html",
 	"content": "<span>Main Idea:</span><br> Firefly Firework <br> <br> <span>Plugin:</span><br> No-plugin <br> <br> <span>Main Skill:</span><br> Canvas Animation <br><br> <span>Date:</span> <br> 2015/07 <br> <br> Use bezier line function to create firework-like curve line, <br> then use hsl function create firefly-like sparkle. <br> <pre></pre>"
 }, {
+	"name": "Flashlight",
+	"image_source": 'img/Flashlight.jpg',
+	"url": "wonder/Flashlight/index.html",
+	"content": "<span>Main Idea:</span><br> Flashlight <br> <br> <span>Plugin:</span><br> Jquery <br> <br> <span>Main Skill:</span><br> Canvas Global Composite Operation <br><br> <span>Date:</span> <br> 2016/03 <br> <br> Use canvas' global composite operation to clip the dark we want to light up, <br> still have some efficacy problem <br> <pre></pre>"
+}, {
+	"name": "Line Animation",
+	"image_source": 'img/line_animation.jpg',
+	"url": "wonder/line_animation/index.html",
+	"content": "<span>Main Idea:</span><br> Line Animation <br> <br> <span>Plugin:</span><br> No plugin. <br> <br> <span>Main Skill:</span><br> Svg Moving Line <br><br> <span>Date:</span> <br> 2014/10 <br> <br> Use stroke-dashoffset and the setting of dasharray to create illusion <br> You may see some square, but they didn't every exist. <br> <pre></pre>"
+}, {
+	"name": "Pure CSS Particle Background",
+	"image_source": 'img/particle_background.jpg',
+	"url": "wonder/particle_background/index.html",
+	"content": "<span>Main Idea:</span><br> Pure CSS Particle Background <br> <br> <span>Plugin:</span><br> No plugin. <br> <br> <span>Main Skill:</span><br> CSS linear-gradient <br><br> <span>Date:</span> <br> 2016/07 <br> <br> Use CSS color attribute \"linear-gradient\" draw a small size background then repeat it. <br> <pre></pre>"
+}, {
+	"name": "Black Block",
+	"image_source": 'img/Black Block.jpg',
+	"url": "wonder/Black Block/index.html",
+	"content": "<span>Main Idea:</span><br> Black Block <br> <br> <span>Plugin:</span><br> No plugin. <br> <br> <span>Main Skill:</span><br> Canvas point setting and line practice <br><br> <span>Date:</span> <br> 2015/09 <br> <br> count block's four points then scale it by minus each coordinate, <br> rotate it with css <br>"
+}, {
 	"name": "Weiss",
 	"image_source": team_rwby["weiss"],
-	"url": "http",
+	"url": "wonder//index.html",
 	"content": "Weiss Schnee"
 }, {
 	"name": "Blake",
 	"image_source": team_rwby["blake"],
-	"url": "http",
+	"url": "wonder//index.html",
 	"content": "Blake Belladona"
 }, {
 	"name": "Yang",
 	"image_source": team_rwby["yang"],
-	"url": "http",
+	"url": "wonder//index.html",
 	"content": "Yang Xio Long"
 }, {
 	"name": "Ruby",
 	"image_source": team_rwby["ruby"],
-	"url": "http",
+	"url": "wonder//index.html",
 	"content": "Ruby Rose"
 }, {
 	"name": "Weiss",
 	"image_source": team_rwby["weiss"],
-	"url": "http",
+	"url": "wonder//index.html",
 	"content": "Weiss Schnee"
 }, {
 	"name": "Blake",
 	"image_source": team_rwby["blake"],
-	"url": "http",
+	"url": "wonder//index.html",
 	"content": "Blake Belladona"
 }, {
 	"name": "Yang",
 	"image_source": team_rwby["yang"],
-	"url": "http",
+	"url": "wonder//index.html",
 	"content": "Yang Xio Long"
 }, {
 	"name": "Ruby",
 	"image_source": team_rwby["ruby"],
-	"url": "http",
+	"url": "wonder//index.html",
 	"content": "Ruby Rose"
 }, {
 	"name": "Weiss",
 	"image_source": team_rwby["weiss"],
-	"url": "http",
+	"url": "wonder//index.html",
 	"content": "Weiss Schnee"
 }, {
 	"name": "Blake",
 	"image_source": team_rwby["blake"],
-	"url": "http",
+	"url": "wonder//index.html",
 	"content": "Blake Belladona"
 }, {
 	"name": "Yang",
 	"image_source": team_rwby["yang"],
-	"url": "http",
+	"url": "wonder//index.html",
 	"content": "Yang Xio Long"
 }, {
 	"name": "Ruby",
 	"image_source": team_rwby["ruby"],
-	"url": "http",
-	"content": "Ruby Rose"
-}, {
-	"name": "Weiss",
-	"image_source": team_rwby["weiss"],
-	"url": "http",
-	"content": "Weiss Schnee"
-}, {
-	"name": "Blake",
-	"image_source": team_rwby["blake"],
-	"url": "http",
-	"content": "Blake Belladona"
-}, {
-	"name": "Yang",
-	"image_source": team_rwby["yang"],
-	"url": "http",
-	"content": "Yang Xio Long"
-}, {
-	"name": "Ruby",
-	"image_source": team_rwby["ruby"],
-	"url": "http",
+	"url": "wonder//index.html",
 	"content": "Ruby Rose"
 }, {
 	"name": "Ruby",
 	"image_source": team_rwby["ruby"],
-	"url": "http",
+	"url": "wonder//index.html",
 	"content": "Ruby Rose"
 }, {
 	"name": "Weiss",
 	"image_source": team_rwby["weiss"],
-	"url": "http",
+	"url": "wonder//index.html",
 	"content": "Weiss Schnee"
 }, {
 	"name": "Blake",
 	"image_source": team_rwby["blake"],
-	"url": "http",
+	"url": "wonder//index.html",
 	"content": "Blake Belladona"
 }];
 
@@ -169,7 +169,7 @@ window.onload = function() {
 	function create_wonder_click_event(wonder, number, detail) {
 		wonder.onclick = function() {
 			// console.log(this.getElementsByTagName('img')[0]);
-			detail.getElementsByClassName('_img')[0].style.background = "url(" + this.getElementsByTagName('img')[0].src + ")";
+			detail.getElementsByClassName('_img')[0].style.backgroundImage = "url(" + this.getElementsByTagName('img')[0].src + ")";
 			detail.getElementsByClassName('_content')[0].innerHTML = wonders_detail[number].content;
 			preview_btn.on("click", function() {
 				window.open(wonders_detail[number].url, '_blank');

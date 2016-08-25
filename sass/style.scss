@@ -477,7 +477,8 @@ body{
 		._img{
 			width: 60%;
 			height: 80%;
-			background-image:url(unquote(nth($team_rwby, 1)));
+			background-position: center;
+			background-size: 100% auto;
 			@include box-shadow(0px 0px 60px 30px black inset);
 			&:hover{
 				@include box-shadow(0px 0px 0px 0px black inset);
@@ -496,14 +497,9 @@ body{
 			height: 80%;
 
 			._content{
-				// display: flex;
-				// justify-content:center;
-				// align-items:center;
-				// border: 1px solid red;
 				span{
 					color: snow;
 				}
-				// color: gray;
 
 				text-align: justify;
 				width: 100%;
