@@ -87,30 +87,30 @@ var wonders_detail = [{
 	"url": "wonder/千流星/index.html",
 	"content": "<span>Main Idea:</span><br> 千流星 <br> <br> <span>Plugin:</span><br> No plugin <br> <br> <span>Main Skill:</span><br> Canvas Animation <br><br> <span>Date:</span> <br> 2016/03 <br> <br> imitate from \"http://codepen.io/dleatherman/pen/kAzgw\" <br> <br> \"Thousands of Shooting Start\" <br> I'm always imagining a sky has a thousands of shooting stars, which means have a thousands of wishes could make all dreams come true :D <br> Well I know if it really happened probably means the end of the world, <br> but I thought it could be beautiful anyhow, right :D? <br> <br> By imitating other fantastic programmers, well, truly advance my own skill and understand the shortage of myself. <br> I hope someday I could become the one who is imitated by someone 0w- <br>"
 }, {
-	"name": "Yang",
-	"image_source": team_rwby["yang"],
-	"url": "wonder//index.html",
-	"content": "Yang Xio Long"
+	"name": "Ink Blood Nightmares",
+	"image_source": 'img/Ink Blood Nightmares.jpg',
+	"url": "wonder/Ink Blood Nightmares/index.html",
+	"content": "<span>Main Idea:</span><br> Ink Blood Nightmares <br> <br> <span>Plugin:</span><br> No plugin <br> <br> <span>Main Skill:</span><br> Canvas Animation <br><br> <span>Date:</span> <br> 2016/03 <br> <br> modify from \"千流星\" <br> <br> Alright I know I'm not that good at naming something,  <br> but.. whatever. <br> it takes a lots of time for me to enhance the efficacy. <br> Hope you like it :D <br> <br> The  Chinese name comes from a novel called \"日落後\" write by 星子 <br> is totally not the translation of the English name. <br>"
 }, {
-	"name": "Ruby",
-	"image_source": team_rwby["ruby"],
-	"url": "wonder//index.html",
-	"content": "Ruby Rose"
+	"name": "Pure CSS TurnStile",
+	"image_source": 'img/Pure CSS TurnStile.jpg',
+	"url": "wonder/Pure CSS TurnStile/index.html",
+	"content": "<span>Main Idea:</span><br> Pure CSS TurnStile <br> <br> <span>Plugin:</span><br> No plugin <br> <br> <span>Main Skill:</span><br> CSS Animation and perspective <br><br> <span>Date:</span> <br> 2016/06 <br> <br> rotate combine perspective attribute."
 }, {
-	"name": "Ruby",
-	"image_source": team_rwby["ruby"],
-	"url": "wonder//index.html",
-	"content": "Ruby Rose"
+	"name": "Music Vitualization",
+	"image_source": 'img/Music Vitualization.jpg',
+	"url": "wonder/Music Vitualization/index.html",
+	"content": "<span>Main Idea:</span><br> Music Vitualization <br> <br> <span>Plugin:</span><br> No plugin <br> <br> <span>Main Skill:</span><br> Javescript Audio Data Vitualization <br><br> <span>Date:</span> <br> 2016/08 <br> <br> Practice from \"https://www.patrick-wied.at/blog/how-to-create-audio-visualizations-with-javascript-html\" <br> get music data, then vitualize it (?)"
 }, {
-	"name": "Weiss",
-	"image_source": team_rwby["weiss"],
-	"url": "wonder//index.html",
-	"content": "Weiss Schnee"
+	"name": "Line Fall",
+	"image_source": 'img/Line Fall.jpg',
+	"url": "wonder/Line Fall/index.html",
+	"content": "<span>Main Idea:</span><br> Line Fall <br> <br> <span>Plugin:</span><br> No plugin <br> <br> <span>Main Skill:</span><br> Canvas Animation <br><br> <span>Date:</span> <br> 2016/05 <br> <br> at first, all lines seem to move around randomly, but before long all lines go vertical, and few seconds later,   <br> <br> line fall shows up. <br>"
 }, {
-	"name": "Blake",
-	"image_source": team_rwby["blake"],
-	"url": "wonder//index.html",
-	"content": "Blake Belladona"
+	"name": "Round and Round",
+	"image_source": 'img/round and round.jpg',
+	"url": "wonder/round and round/index.html",
+	"content": "<span>Main Idea:</span><br> Round and Round <br> <br> <span>Plugin:</span><br> TweenMax <br> <br> <span>Main Skill:</span><br> Canvas Animation <br><br> <span>Date:</span> <br> 2016/08 <br> <br> when I first think about \"Round and round\", this song comes to my mind:   <br> https://youtu.be/VQFhd3X8p6g?t=21s     <br> yeah, Adventure Time's song: Food Chain Song   <br> <br> basically, this project is a practice about canvas animation combine with tweenmax,     <br> the rotation part is the most weird part, you have to use save() and restore() to decide origin of canvas each time. <br> <br> Color I use hsl(), rather than rgb() it could make the same saturation  color. <br>"
 }];
 
 window.onload = function() {
@@ -126,8 +126,7 @@ window.onload = function() {
 		creator_btn = document.getElementsByClassName('creator')[0],
 		now_at = 1,
 		to_top = document.getElementById('to_top'),
-		loaded_images = 0,
-		preview_btn = $('#_preview_btn');
+		loaded_images = 0;
 
 	var wonders = document.getElementsByClassName('wonder'),
 		detail = document.getElementById('detail'),
@@ -171,9 +170,13 @@ window.onload = function() {
 			// console.log(this.getElementsByTagName('img')[0]);
 			detail.getElementsByClassName('_img')[0].style.backgroundImage = "url(" + this.getElementsByTagName('img')[0].src + ")";
 			detail.getElementsByClassName('_content')[0].innerHTML = wonders_detail[number].content;
-			preview_btn.on("click", function() {
+			$('#_preview_btn').prop("onclick", null);
+			$('#_preview_btn').click(function(event) {
 				window.open(wonders_detail[number].url, '_blank');
 			});
+/*			$('#_preview_btn').on("click", function() {
+				window.open(wonders_detail[number].url, '_blank');
+			});*/
 
 			detail.style.opacity = 1;
 			detail.style.zIndex = 1;
