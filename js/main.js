@@ -37,30 +37,30 @@ var wonders_detail = [{
 	"url": "wonder/Black Block/index.html",
 	"content": "<span>Main Idea:</span><br> Black Block <br> <br> <span>Plugin:</span><br> No plugin. <br> <br> <span>Main Skill:</span><br> Canvas point setting and line practice <br><br> <span>Date:</span> <br> 2015/09 <br> <br> count block's four points then scale it by minus each coordinate, <br> rotate it with css <br>"
 }, {
-	"name": "Weiss",
-	"image_source": team_rwby["weiss"],
-	"url": "wonder//index.html",
-	"content": "Weiss Schnee"
+	"name": "Parallax RWBY transform",
+	"image_source": 'img/Parallax_RWBY_transform.jpg',
+	"url": "wonder/Parallax_RWBY_transform/index.html",
+	"content": "<span>Main Idea:</span><br> Parallax RWBY transform <br> <br> <span>Plugin:</span><br> No plugin. <br> <br> <span>Main Skill:</span><br> CSS perspective. <br><br> <span>Date:</span> <br> 2016/05 <br> <br> use pure css create parallax effect with depth of field.   <br> and a little bit pop-up photo browser. <br> <br> image source: pixiv.net <br> <pre></pre>"
 }, {
-	"name": "Blake",
-	"image_source": team_rwby["blake"],
-	"url": "wonder//index.html",
-	"content": "Blake Belladona"
+	"name": "Parallax RWBY with content",
+	"image_source": 'img/Parallax_RWBY_with_content.jpg',
+	"url": "wonder/Parallax_RWBY_with_content/index.html",
+	"content": "<span>Main Idea:</span><br> Parallax RWBY with content <br> <br> <span>Plugin:</span><br> No plugin <br> <br> <span>Main Skill:</span><br> CSS image attachment <br><br> <span>Date:</span> <br> 2016/05 <br> <br> Pure css simple parallax effect demo, without  javascript. <br> <br> images source: pixiv <br> content soure: rwby wiki <br> <pre></pre>"
 }, {
-	"name": "Yang",
-	"image_source": team_rwby["yang"],
-	"url": "wonder//index.html",
-	"content": "Yang Xio Long"
+	"name": "Customized Snowflake",
+	"image_source": 'img/Customized Snowflake.jpg',
+	"url": "wonder/Customized Snowflake/index.html",
+	"content": "<span>Main Idea:</span><br> Customized Snowflake <br> <br> <span>Plugin:</span><br> No plugin <br> <br> <span>Main Skill:</span><br> Math application <br><br> <span>Date:</span> <br> 2016/12 <br> <br> Every lines you see are straight, but it seems that there's a curve between each axis. Have some bugs when setting the point number and axis length but it's still cool I thought :D <br> <br> Hope you enjoyed! <br> <pre></pre>"
 }, {
-	"name": "Ruby",
-	"image_source": team_rwby["ruby"],
-	"url": "wonder//index.html",
-	"content": "Ruby Rose"
+	"name": "Paper Texture",
+	"image_source": 'img/paper_texture.jpg',
+	"url": "wonder/paper_texture/index.html",
+	"content": "<span>Main Idea:</span><br> Paper Texture <br> <br> <span>Plugin:</span><br> No plugin <br> <br> <span>Main Skill:</span><br> CSS Linear-gradient <br><br> <span>Date:</span> <br> 2014/09 <br> <br> Use two kind of white create a paper texture like backgrounf. <br> <pre></pre>"
 }, {
-	"name": "Weiss",
-	"image_source": team_rwby["weiss"],
-	"url": "wonder//index.html",
-	"content": "Weiss Schnee"
+	"name": "HappyBirthday",
+	"image_source": 'img/HappyBirthday.jpg',
+	"url": "wonder/HappyBirthday/index.html",
+	"content": "<span>Main Idea:</span><br> HappyBirthday <br> <br> <span>Plugin:</span><br> No plugin <br> <br> <span>Main Skill:</span><br> CSS perspective effect and transform rotate <br><br> <span>Date:</span> <br> 2015/10 <br> <br> Yep, just say happ birthday to myself! <br> <pre></pre>"
 }, {
 	"name": "Blake",
 	"image_source": team_rwby["blake"],
