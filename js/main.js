@@ -62,30 +62,30 @@ var wonders_detail = [{
 	"url": "wonder/HappyBirthday/index.html",
 	"content": "<span>Main Idea:</span><br> HappyBirthday <br> <br> <span>Plugin:</span><br> No plugin <br> <br> <span>Main Skill:</span><br> CSS perspective effect and transform rotate <br><br> <span>Date:</span> <br> 2015/10 <br> <br> Yep, just say happ birthday to myself! <br> <pre></pre>"
 }, {
-	"name": "Blake",
-	"image_source": team_rwby["blake"],
-	"url": "wonder//index.html",
-	"content": "Blake Belladona"
+	"name": "RWD RWBY Big Block Menu with pop box",
+	"image_source": 'img/RWD RWBY Big Block Menu with pop box.jpg',
+	"url": "wonder/RWD RWBY Big Block Menu with pop box/index.html",
+	"content": "<span>Main Idea:</span><br> RWD RWBY Big Block Menu with pop box <br> <br> <span>Plugin:</span><br> No plugin <br> <br> <span>Main Skill:</span><br> RWD and media practice <br><br> <span>Date:</span> <br> 2016/08 <br> <br> Resize and clikc it to see RWD effect <br> <br> Image Source: http://www.pixiv.net/ <br> Introduction Source: http://rwby.wikia.com/wiki/RWBY_Wiki <br> <pre></pre>"
 }, {
-	"name": "Yang",
-	"image_source": team_rwby["yang"],
-	"url": "wonder//index.html",
-	"content": "Yang Xio Long"
+	"name": "Colorful Worm Paint",
+	"image_source": 'img/Colorful Worm Paint.jpg',
+	"url": "wonder/Colorful Worm Paint/index.html",
+	"content": "<span>Main Idea:</span><br> Colorful Worm Paint <br> <br> <span>Plugin:</span><br> No plugin <br> <br> <span>Main Skill:</span><br> Canvas without clean view <br><br> <span>Date:</span> <br> 2015/07 <br> <br> modify the code from \"Firefly Firework\" <br> try to heart user's eyes (? <br> but it's cool and some kind of beautiful, right? <br>"
 }, {
-	"name": "Ruby",
-	"image_source": team_rwby["ruby"],
-	"url": "wonder//index.html",
-	"content": "Ruby Rose"
+	"name": "Rain Tunnel",
+	"image_source": 'img/Rain Tunnel.jpg',
+	"url": "wonder/Rain Tunnel/index.html",
+	"content": "<span>Main Idea:</span><br> Rain Tunnel <br> <br> <span>Plugin:</span><br> No plugin <br> <br> <span>Main Skill:</span><br> Canvas vertor practice <br><br> <span>Date:</span> <br> 2015/10 <br> <br> Base on Max Ruigewaard's \"Rain on HTML5 Canvas\"  code <br> http://codepen.io/ruigewaard/pen/JHDdF <br> <br> change some code and write some comment use my poor English, <br> add hover effect to make it looks like a tunnel <br> <br> Hope you enjoyed, Rain Tunnel : D <br>"
 }, {
-	"name": "Weiss",
-	"image_source": team_rwby["weiss"],
-	"url": "wonder//index.html",
-	"content": "Weiss Schnee"
+	"name": "Snow of Sakura",
+	"image_source": 'img/sakura.jpg',
+	"url": "wonder/sakura/index.html",
+	"content": "<span>Main Idea:</span><br> Rain of Sakura <br> <br> <span>Plugin:</span><br> No plugin <br> <br> <span>Main Skill:</span><br> Canvas Animation <br><br> <span>Date:</span> <br> 2016/06 <br> <br> One day I saw a very beautiful photo of sakura <br> so, here it is :D"
 }, {
-	"name": "Blake",
-	"image_source": team_rwby["blake"],
-	"url": "wonder//index.html",
-	"content": "Blake Belladona"
+	"name": "千流星",
+	"image_source": 'img/千流星.jpg',
+	"url": "wonder/千流星/index.html",
+	"content": "<span>Main Idea:</span><br> 千流星 <br> <br> <span>Plugin:</span><br> No plugin <br> <br> <span>Main Skill:</span><br> Canvas Animation <br><br> <span>Date:</span> <br> 2016/03 <br> <br> imitate from \"http://codepen.io/dleatherman/pen/kAzgw\" <br> <br> \"Thousands of Shooting Start\" <br> I'm always imagining a sky has a thousands of shooting stars, which means have a thousands of wishes could make all dreams come true :D <br> Well I know if it really happened probably means the end of the world, <br> but I thought it could be beautiful anyhow, right :D? <br> <br> By imitating other fantastic programmers, well, truly advance my own skill and understand the shortage of myself. <br> I hope someday I could become the one who is imitated by someone 0w- <br>"
 }, {
 	"name": "Yang",
 	"image_source": team_rwby["yang"],
