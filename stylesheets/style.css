@@ -773,9 +773,6 @@ body {
 }
 /* line 498, ../sass/style.scss */
 .detail ._block ._cover ._content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   text-align: justify;
   width: 100%;
   height: 100%;
@@ -796,7 +793,11 @@ body {
   -webkit-transform: translateX(-50px);
   transform: translateX(-50px);
 }
-/* line 515, ../sass/style.scss */
+/* line 503, ../sass/style.scss */
+.detail ._block ._cover ._content span {
+  color: snow;
+}
+/* line 520, ../sass/style.scss */
 .detail ._block ._cover .preview_btn {
   display: flex;
   justify-content: center;
@@ -819,7 +820,7 @@ body {
   -webkit-transform: translateX(-50px);
   transform: translateX(-50px);
 }
-/* line 531, ../sass/style.scss */
+/* line 536, ../sass/style.scss */
 .detail ._back {
   position: absolute;
   top: 0px;
@@ -827,7 +828,7 @@ body {
   width: 5vw;
   height: 5vw;
 }
-/* line 537, ../sass/style.scss */
+/* line 542, ../sass/style.scss */
 .detail ._back:hover {
   -moz-transition: -moz-transform 0.2s;
   -o-transition: -o-transform 0.2s;
@@ -839,7 +840,7 @@ body {
   transform: rotateZ(90deg);
   cursor: pointer;
 }
-/* line 542, ../sass/style.scss */
+/* line 547, ../sass/style.scss */
 .detail ._back:after {
   position: absolute;
   top: 0px;
@@ -854,7 +855,7 @@ body {
   -webkit-transform: rotateZ(45deg);
   transform: rotateZ(45deg);
 }
-/* line 553, ../sass/style.scss */
+/* line 558, ../sass/style.scss */
 .detail ._back:before {
   position: absolute;
   top: 0px;
@@ -870,7 +871,7 @@ body {
   transform: rotateZ(-45deg);
 }
 
-/* line 567, ../sass/style.scss */
+/* line 572, ../sass/style.scss */
 .to_top {
   position: fixed;
   bottom: 7vh;
@@ -888,13 +889,13 @@ body {
   -webkit-transition: opacity 0.2s, -webkit-transform 0.4s;
   transition: opacity 0.2s, transform 0.4s;
 }
-/* line 581, ../sass/style.scss */
+/* line 586, ../sass/style.scss */
 .to_top:hover:after {
   -moz-animation: top_animation 0.2s linear forwards;
   -webkit-animation: top_animation 0.2s linear forwards;
   animation: top_animation 0.2s linear forwards;
 }
-/* line 585, ../sass/style.scss */
+/* line 590, ../sass/style.scss */
 .to_top:after {
   cursor: pointer;
   content: 'Back';
@@ -1002,18 +1003,18 @@ body {
     transform: rotateZ(360deg);
   }
 }
-/* line 623, ../sass/style.scss */
+/* line 628, ../sass/style.scss */
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
 
-/* line 627, ../sass/style.scss */
+/* line 632, ../sass/style.scss */
 ::-webkit-scrollbar-track {
   background-color: transparent;
 }
 
-/* line 630, ../sass/style.scss */
+/* line 635, ../sass/style.scss */
 ::-webkit-scrollbar-thumb {
   background-color: transparent;
   border: 1px solid white;

@@ -496,9 +496,14 @@ body{
 			height: 80%;
 
 			._content{
-				display: flex;
-				justify-content:center;
-				align-items:center;
+				// display: flex;
+				// justify-content:center;
+				// align-items:center;
+				// border: 1px solid red;
+				span{
+					color: snow;
+				}
+				// color: gray;
 
 				text-align: justify;
 				width: 100%;

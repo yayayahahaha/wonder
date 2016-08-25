@@ -12,10 +12,10 @@ var team_rwby = {
 };
 
 var wonders_detail = [{
-	"name": "Ruby",
-	"image_source": team_rwby["ruby"],
-	"url": "http",
-	"content": "Ruby Rose"
+	"name": "Firefly Firework",
+	"image_source": "img/bezier_line.jpg",
+	"url": "wonder/BezierLine/index.html",
+	"content": "<span>Main Idea:</span><br> Firefly Firework <br> <br> <span>Plugin:</span><br> No-plugin <br> <br> <span>Main Skill:</span><br> Canvas Animation <br><br> <span>Date:</span> <br> 2015/07 <br> <br> Use bezier line function to create firework-like curve line, <br> then use hsl function create firefly-like sparkle. <br> <pre></pre>"
 }, {
 	"name": "Weiss",
 	"image_source": team_rwby["weiss"],
@@ -126,7 +126,8 @@ window.onload = function() {
 		creator_btn = document.getElementsByClassName('creator')[0],
 		now_at = 1,
 		to_top = document.getElementById('to_top'),
-		loaded_images = 0;
+		loaded_images = 0,
+		preview_btn = $('#_preview_btn');
 
 	var wonders = document.getElementsByClassName('wonder'),
 		detail = document.getElementById('detail'),
@@ -170,6 +171,9 @@ window.onload = function() {
 			// console.log(this.getElementsByTagName('img')[0]);
 			detail.getElementsByClassName('_img')[0].style.background = "url(" + this.getElementsByTagName('img')[0].src + ")";
 			detail.getElementsByClassName('_content')[0].innerHTML = wonders_detail[number].content;
+			preview_btn.on("click", function() {
+				window.open(wonders_detail[number].url, '_blank');
+			});
 
 			detail.style.opacity = 1;
 			detail.style.zIndex = 1;
