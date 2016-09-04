@@ -11,7 +11,15 @@ var team_rwby = {
 	"yang": "http://puu.sh/oXDO9/3c169032d0.jpg"
 };
 
-var wonders_detail = [{
+
+var wonders_detail = [
+{
+	"name": "Chess Board",
+	"image_source": "img/chess_board.jpg",
+	"url": "wonder/chess_board/index.html",
+	"content": "<span>Main Idea:</span> <br> Chess Board <br> <br> <span>Plugin:</span> <br> No-plugin <br> <br> <span>Main Skill:</span> <br> CSS Background linear-gradient <br> <br> <span>Date:</span> <br> 2016/8 <br> <br> code from: <br> https://gist.github.com/orioltf/2566558 <br>"
+},
+{
 	"name": "Firefly Firework",
 	"image_source": "img/bezier_line.jpg",
 	"url": "wonder/BezierLine/index.html",

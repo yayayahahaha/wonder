@@ -425,6 +425,13 @@ body {
   width: 20vw;
   height: 43vh;
 }
+/* line 198, ../sass/style.scss */
+.main_body .scene:nth-child(21) {
+  top: 410vh;
+  left: 5vw;
+  width: 30vw;
+  height: 40vh;
+}
 
 /* line 236, ../sass/style.scss */
 .loading {
