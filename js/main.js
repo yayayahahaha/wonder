@@ -14,6 +14,12 @@ var team_rwby = {
 
 var wonders_detail = [
 {
+	"name": "Floating Words",
+	"image_source": "img/Floating Words.jpg",
+	"url": "wonder/Floating Words/index.html",
+	"content": "<span>Main Idea:</span> <br> Floating Words <br> <br> <span>Plugin:</span> <br> No-plugin <br> <br> <span>Main Skill:</span> <br> Canvas fillText, measureText <br> <br> <span>Date:</span> <br> 2016/9 <br> <br> Words source: lyrics of song \"Red Like Roses part II\" - RWBY Theme <br> determine size and speed by it frequency in lyrics <br> hope you like it : ) <br>"
+},
+{
 	"name": "Chess Board",
 	"image_source": "img/chess_board.jpg",
 	"url": "wonder/chess_board/index.html",
@@ -160,7 +166,7 @@ window.onload = function() {
 					document.getElementsByClassName('loading')[0].innerHTML = "";
 				}, 300);
 			} else {
-				document.getElementsByClassName('persent')[0].innerHTML = loaded_images * 100 / total + " %";
+				document.getElementsByClassName('persent')[0].innerHTML = (loaded_images * 100 / total).toFixed(2) + " %";
 			}
 		}
 	}
