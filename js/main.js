@@ -14,6 +14,30 @@ var team_rwby = {
 
 var wonders_detail = [
 {
+	"name": "Svg Polygon Layout",
+	"image_source": "img/svg_polygon.jpg",
+	"url": "wonder/svg_polygon/index.html",
+	"content": "<span>Main Idea:</span> <br> Svg Polygon Layout <br> <br> <span>Plugin:</span> <br> Snap.js D3.js <br> <br> <span>Main Skill:</span> <br> Polygon layout and animation <br> <br> <span>Date:</span> <br> 2016/9 <br> <br> Image Source:   <br> https://wall.alphacoders.com/big.php?i=731778  <br> https://wall.alphacoders.com/big.php?i=662361  <br> https://wall.alphacoders.com/big.php?i=665318  <br> https://wall.alphacoders.com/big.php?i=692002  <br> https://wall.alphacoders.com/big.php?i=678651  <br> https://wall.alphacoders.com/big.php?i=681590  <br> https://wall.alphacoders.com/big.php?i=445259  <br> https://wall.alphacoders.com/big.php?i=552395  <br> https://wall.alphacoders.com/big.php?i=552399  <br> https://wall.alphacoders.com/big.php?i=552394  <br> https://wall.alphacoders.com/big.php?i=445275  <br> https://wall.alphacoders.com/big.php?i=643334  <br> <br> First time using snap with d3, has a lots of dirty codes.  <br> next time will be better<br>"
+},
+{
+	"name": "SVG Customized Polygon",
+	"image_source": "img/SVG_customized_polygon.jpg",
+	"url": "wonder/SVG_customized_polygon/index.html",
+	"content": "<span>Main Idea:</span> <br> SVG Customized Polygon <br> <br> <span>Plugin:</span> <br> Snap.js <br> <br> <span>Main Skill:</span> <br> use json type to make create polygon layout more easier <br> <br> <span>Date:</span> <br> 2016/9 <br> <br> Image source:  <br> https://wall.alphacoders.com/big.php?i=552399  <br> https://wall.alphacoders.com/big.php?i=552395  <br> https://wall.alphacoders.com/big.php?i=552393  <br> https://wall.alphacoders.com/big.php?i=552394  <br> <br> use json type to make create polygon layout more functional<br>"
+},
+{
+	"name": "Stained Glass",
+	"image_source": "img/Stained Glass.jpg",
+	"url": "wonder/Stained Glass/index.html",
+	"content": "<span>Main Idea:</span> <br> Stained Glass <br> <br> <span>Plugin:</span> <br> delaunay.js <br> <br> <span>Main Skill:</span> <br> Delaunay Traingulation Method <br> <br> <span>Date:</span> <br> 2016/9 <br> <br> Inspire: http://codepen.io/FlyC/pen/wzZVRB  <br> <br> modify DelaunayJS' example<br> <br>"
+},
+{
+	"name": "Leaf Vein",
+	"image_source": "img/leaf_vein.jpg",
+	"url": "wonder/Leaf Vein/index.html",
+	"content": "<span>Main Idea:</span> <br> Leaf Vein <br> <br> <span>Plugin:</span> <br> TweenMax <br> <br> <span>Main Skill:</span> <br> Canvas animation, center of gravity <br> <br> <span>Date:</span> <br> 2016/9 <br> <br> Divide view_port to two triangle,<br> then find each triangle's gravity center,<br> again, and again.<br> <br>"
+},
+{
 	"name": "Floating Words",
 	"image_source": "img/Floating Words.jpg",
 	"url": "wonder/Floating Words/index.html",

@@ -193,7 +193,7 @@ body{
 			}
 		}
 	}
-	@for $i from 1 through 22 {
+	@for $i from 1 through 26 {
 		@if $i%5 == 1 {
 			.scene:nth-child(#{$i}){
 				top: 10 + floor($i/5) * 100vh;
@@ -507,6 +507,7 @@ body{
 				margin: 5%;
 				padding:5%;
 				background-color: _opacity_color(255,0.3);
+				overflow: scroll;
 				@include box-shadow(0px 0px 20px black);
 
 				opacity: 0;
