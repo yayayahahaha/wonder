@@ -151,158 +151,160 @@ var wonders_detail = [
 	"content": "<span>Main Idea:</span><br> Round and Round <br> <br> <span>Plugin:</span><br> TweenMax <br> <br> <span>Main Skill:</span><br> Canvas Animation <br><br> <span>Date:</span> <br> 2016/08 <br> <br> when I first think about \"Round and round\", this song comes to my mind:   <br> https://youtu.be/VQFhd3X8p6g?t=21s     <br> yeah, Adventure Time's song: Food Chain Song   <br> <br> basically, this project is a practice about canvas animation combine with tweenmax,     <br> the rotation part is the most weird part, you have to use save() and restore() to decide origin of canvas each time. <br> <br> Color I use hsl(), rather than rgb() it could make the same saturation  color. <br>"
 }];
 
-window.onload = function() {
-	/* images loader  */
-	var images = [],
-		scene = document.getElementsByClassName('scene'),
-		parallaxs = [],
-		main_body = $("#main_body"),
-		main_btn = document.getElementsByClassName('title')[0],
-		about_body = $("#about_body"),
-		about_btn = document.getElementsByClassName('about')[0],
-		creator_body = $("#creator_body"),
-		creator_btn = document.getElementsByClassName('creator')[0],
-		now_at = 1,
-		to_top = document.getElementById('to_top'),
-		loaded_images = 0;
+document.addEventListener("DOMContentLoaded", function() {
+    
+    /* images loader  */
+    var images = [],
+    	scene = document.getElementsByClassName('scene'),
+    	parallaxs = [],
+    	main_body = $("#main_body"),
+    	main_btn = document.getElementsByClassName('title')[0],
+    	about_body = $("#about_body"),
+    	about_btn = document.getElementsByClassName('about')[0],
+    	creator_body = $("#creator_body"),
+    	creator_btn = document.getElementsByClassName('creator')[0],
+    	now_at = 1,
+    	to_top = document.getElementById('to_top'),
+    	loaded_images = 0;
 
-	var wonders = document.getElementsByClassName('wonder'),
-		detail = document.getElementById('detail'),
-		back = document.getElementById('back'),
-		_block_items = [document.getElementById('_img'), document.getElementById('_content'), document.getElementById('_preview_btn')];
+    var wonders = document.getElementsByClassName('wonder'),
+    	detail = document.getElementById('detail'),
+    	back = document.getElementById('back'),
+    	_block_items = [document.getElementById('_img'), document.getElementById('_content'), document.getElementById('_preview_btn')];
 
-	for (var i = 0; i < wonders_detail.length; i++) {
-		scene[i].getElementsByTagName('p')[0].innerHTML = wonders_detail[i].name;
+    for (var i = 0; i < wonders_detail.length; i++) {
+    	scene[i].getElementsByTagName('p')[0].innerHTML = wonders_detail[i].name;
 
-		load_image(scene[i].getElementsByTagName('img')[0], wonders_detail[i].image_source, i, wonders_detail.length);
-	}
+    	load_image(scene[i].getElementsByTagName('img')[0], wonders_detail[i].image_source, i, wonders_detail.length);
+    }
 
-	function load_image(img, src, number, total) {
-		img.src = src;
-		images.push(img);
-		img.onload = function() {
-			loaded_images++;
-			if (loaded_images == total) {
-				// console.log("done!");
-				document.getElementsByClassName('loading')[0].style.opacity = 0;
-				setTimeout(function() {
-					document.getElementsByClassName('loading')[0].style.display = "none";
-					document.getElementsByClassName('loading')[0].innerHTML = "";
-				}, 300);
-			} else {
-				document.getElementsByClassName('persent')[0].innerHTML = (loaded_images * 100 / total).toFixed(2) + " %";
-			}
-		}
-	}
+    function load_image(img, src, number, total) {
+    	img.src = src;
+    	images.push(img);
+    	img.onload = function() {
+    		loaded_images++;
+    		if (loaded_images == total) {
+    			// console.log("done!");
+    			document.getElementsByClassName('loading')[0].style.opacity = 0;
+    			setTimeout(function() {
+    				document.getElementsByClassName('loading')[0].style.display = "none";
+    				document.getElementsByClassName('loading')[0].innerHTML = "";
+    			}, 300);
+    		} else {
+    			document.getElementsByClassName('persent')[0].innerHTML = (loaded_images * 100 / total).toFixed(2) + " %";
+    		}
+    	}
+    }
 
-	/* this parallax_create() function include to_top_btn part */
-	parallax_create(scene, parallaxs, main_body);
+    /* this parallax_create() function include to_top_btn part */
+    parallax_create(scene, parallaxs, main_body);
 
-	/* create wonder click event */
-	for (key in wonders) {
-		create_wonder_click_event(wonders[key], parseInt(key), detail);
-	}
+    /* create wonder click event */
+    for (key in wonders) {
+    	create_wonder_click_event(wonders[key], parseInt(key), detail);
+    }
 
-	function create_wonder_click_event(wonder, number, detail) {
-		wonder.onclick = function() {
-			// console.log(this.getElementsByTagName('img')[0]);
-			detail.getElementsByClassName('_img')[0].style.backgroundImage = "url(" + this.getElementsByTagName('img')[0].src + ")";
-			detail.getElementsByClassName('_content')[0].innerHTML = wonders_detail[number].content;
-			_block_items[2].onclick = function() {
-				window.open(wonders_detail[number].url, '_blank');
-			}
+    function create_wonder_click_event(wonder, number, detail) {
+    	wonder.onclick = function() {
+    		// console.log(this.getElementsByTagName('img')[0]);
+    		detail.getElementsByClassName('_img')[0].style.backgroundImage = "url(" + this.getElementsByTagName('img')[0].src + ")";
+    		detail.getElementsByClassName('_content')[0].innerHTML = wonders_detail[number].content;
+    		_block_items[2].onclick = function() {
+    			window.open(wonders_detail[number].url, '_blank');
+    		}
 
-			detail.style.opacity = 1;
-			detail.style.zIndex = 1;
-			_block_items.forEach(function(item) {
-				item.style.transform = "translateX(0px)";
-				item.style.opacity = 1;
-			});
-		}
-	}
+    		detail.style.opacity = 1;
+    		detail.style.zIndex = 1;
+    		_block_items.forEach(function(item) {
+    			item.style.transform = "translateX(0px)";
+    			item.style.opacity = 1;
+    		});
+    	}
+    }
 
 
 
-	main_btn.onclick = function() {
-		if (now_at == 2) {
-			about_body.css({
-				zIndex: -1,
-				transform: 'translateX(100vw)'
-			});
-		} else if (now_at == 3) {
-			creator_body.css({
-				zIndex: -1,
-				transform: 'translateX(100vw)'
-			});
-			about_body.css({
-				zIndex: -1,
-				transform: 'translateX(100vw)'
-			});
-		}
-		to_top.style.transform = "translateX(0vw)"
-		main_body.css({
-			zIndex: 1,
-			left: '0vw'
-		});
+    main_btn.onclick = function() {
+    	if (now_at == 2) {
+    		about_body.css({
+    			zIndex: -1,
+    			transform: 'translateX(100vw)'
+    		});
+    	} else if (now_at == 3) {
+    		creator_body.css({
+    			zIndex: -1,
+    			transform: 'translateX(100vw)'
+    		});
+    		about_body.css({
+    			zIndex: -1,
+    			transform: 'translateX(100vw)'
+    		});
+    	}
+    	to_top.style.transform = "translateX(0vw)"
+    	main_body.css({
+    		zIndex: 1,
+    		left: '0vw'
+    	});
 
-		now_at = 1;
-	}
-	about_btn.onclick = function() {
-		if (now_at == 1) {
-			to_top.style.transform = "translateX(-100vw)"
-			main_body.css({
-				zIndex: -1,
-				left: '-100vw'
-			});
-		} else if (now_at == 3) {
-			creator_body.css({
-				zIndex: -1,
-				transform: 'translateX(100vw)'
-			});
-		}
-		about_body.css({
-			zIndex: 1,
-			transform: 'translateX(0vw)'
-		});
+    	now_at = 1;
+    }
+    about_btn.onclick = function() {
+    	if (now_at == 1) {
+    		to_top.style.transform = "translateX(-100vw)"
+    		main_body.css({
+    			zIndex: -1,
+    			left: '-100vw'
+    		});
+    	} else if (now_at == 3) {
+    		creator_body.css({
+    			zIndex: -1,
+    			transform: 'translateX(100vw)'
+    		});
+    	}
+    	about_body.css({
+    		zIndex: 1,
+    		transform: 'translateX(0vw)'
+    	});
 
-		now_at = 2;
-	}
-	creator_btn.onclick = function() {
-		if (now_at == 2) {
-			about_body.css({
-				zIndex: -1,
-				transform: 'translateX(-100vw)'
-			});
-		} else if (now_at == 1) {
-			to_top.style.transform = "translateX(-100vw)"
-			main_body.css({
-				zIndex: -1,
-				left: '-100vw'
-			});
-			about_body.css({
-				zIndex: -1,
-				transform: 'translateX(-100vw)'
-			});
-		}
-		creator_body.css({
-			zIndex: 1,
-			transform: 'translateX(0vw)'
-		});
+    	now_at = 2;
+    }
+    creator_btn.onclick = function() {
+    	if (now_at == 2) {
+    		about_body.css({
+    			zIndex: -1,
+    			transform: 'translateX(-100vw)'
+    		});
+    	} else if (now_at == 1) {
+    		to_top.style.transform = "translateX(-100vw)"
+    		main_body.css({
+    			zIndex: -1,
+    			left: '-100vw'
+    		});
+    		about_body.css({
+    			zIndex: -1,
+    			transform: 'translateX(-100vw)'
+    		});
+    	}
+    	creator_body.css({
+    		zIndex: 1,
+    		transform: 'translateX(0vw)'
+    	});
 
-		now_at = 3;
-	}
+    	now_at = 3;
+    }
 
-	back.onclick = function() {
-		detail.style.opacity = 0;
-		_block_items.forEach(function(item) {
-			item.style.transform = "translateX(-50px)";
-			item.style.opacity = 0;
-		})
-		setTimeout(function() {
-			detail.style.zIndex = -2;
-		}, 150);
-	}
-}
+    back.onclick = function() {
+    	detail.style.opacity = 0;
+    	_block_items.forEach(function(item) {
+    		item.style.transform = "translateX(-50px)";
+    		item.style.opacity = 0;
+    	})
+    	setTimeout(function() {
+    		detail.style.zIndex = -2;
+    	}, 150);
+    }
+
+});
 
 function parallax_create(scene, parallaxs, main_body) {
 
