@@ -203,7 +203,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	parallax_create(scene, parallaxs, main_body);
 
 	/* create wonder click event */
-	for (key in wonders) {
+	for (var key in wonders) {
 		create_wonder_click_event(wonders[key], parseInt(key), detail);
 	}
 
@@ -214,7 +214,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			detail.getElementsByClassName('_content')[0].innerHTML = wonders_detail[number].content;
 			_block_items[2].onclick = function() {
 				window.open(wonders_detail[number].url, '_blank');
-			}
+			};
 
 			detail.style.opacity = 1;
 			detail.style.zIndex = 1;
@@ -222,10 +222,8 @@ document.addEventListener("DOMContentLoaded", function() {
 				item.style.transform = "translateX(0px)";
 				item.style.opacity = 1;
 			});
-		}
+		};
 	}
-
-
 
 	main_btn.onclick = function() {
 		if (now_at == 2) {
@@ -243,17 +241,17 @@ document.addEventListener("DOMContentLoaded", function() {
 				transform: 'translateX(100vw)'
 			});
 		}
-		to_top.style.transform = "translateX(0vw)"
+		to_top.style.transform = "translateX(0vw)";
 		main_body.css({
 			zIndex: 1,
 			left: '0vw'
 		});
 
 		now_at = 1;
-	}
+	};
 	about_btn.onclick = function() {
 		if (now_at == 1) {
-			to_top.style.transform = "translateX(-100vw)"
+			to_top.style.transform = "translateX(-100vw)";
 			main_body.css({
 				zIndex: -1,
 				left: '-100vw'
@@ -270,7 +268,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		});
 
 		now_at = 2;
-	}
+	};
 	creator_btn.onclick = function() {
 		if (now_at == 2) {
 			about_body.css({
@@ -278,7 +276,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				transform: 'translateX(-100vw)'
 			});
 		} else if (now_at == 1) {
-			to_top.style.transform = "translateX(-100vw)"
+			to_top.style.transform = "translateX(-100vw)";
 			main_body.css({
 				zIndex: -1,
 				left: '-100vw'
@@ -294,23 +292,22 @@ document.addEventListener("DOMContentLoaded", function() {
 		});
 
 		now_at = 3;
-	}
+	};
 
 	back.onclick = function() {
 		detail.style.opacity = 0;
 		_block_items.forEach(function(item) {
 			item.style.transform = "translateX(-50px)";
 			item.style.opacity = 0;
-		})
+		});
 		setTimeout(function() {
 			detail.style.zIndex = -2;
 		}, 150);
-	}
+	};
 
 });
 
 function parallax_create(scene, parallaxs, main_body) {
-
 
 	for (var i = 0; i < scene.length; i++) {
 		var parallax = new Parallax(scene[i], {
@@ -358,5 +355,5 @@ function parallax_create(scene, parallaxs, main_body) {
 			function() {
 				to_top.style.opacity = 0;
 			});
-	}
+	};
 }
