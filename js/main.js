@@ -169,10 +169,13 @@ document.addEventListener("DOMContentLoaded", function() {
 				return "background-image: url('" + input + "'')";
 			},
 			wonderClick: function(key) {
+
 				this.detailClass = 'detail clicked';
 
 				this.detailHTML = this.list[key].content;
-				this.detailStyle = "background-image: url("+this.list[key].image_source+");";
+				this.detailStyle = "background-image: url(\""+this.list[key].image_source+"\");";
+
+				console.log(this.detailStyle);
 
 				this.detailLink = this.list[key].url;
 
@@ -188,6 +191,9 @@ document.addEventListener("DOMContentLoaded", function() {
 			},
 			back: function() {
 				this.detailClass = "detail";
+				this.detailHTML = null;
+				this.detailStyle = null;
+				this.detailLink = null;
 			}
 		}
 	});
