@@ -28,8 +28,7 @@
 		<div class="scene" v-for='(item, key) in list' @click='wonderClick(key) '>
 			<div class="wonder layer" data-depth="0.5">
 				<img :src="item.image_source" @load='imageLoaded'>
-				<p>
-				</p>
+				<p v-text='item.name'></p>
 			</div>
 		</div>
 

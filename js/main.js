@@ -155,7 +155,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			loadingContext: "0%",
 			loadingStyle: ""
 		},
-		watch:{
+		watch: {
 			loadingProcess: function(now) {
 				this.loadingContext = now + "%";
 			}
@@ -177,8 +177,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	});
 
 	/* images loader  */
-	var images = [],
-		scene = document.getElementsByClassName('scene'),
+	var scene = document.getElementsByClassName('scene'),
 		parallaxs = [],
 		main_body = $("#main_body"),
 		main_btn = document.getElementsByClassName('title')[0],
@@ -187,17 +186,12 @@ document.addEventListener("DOMContentLoaded", function() {
 		creator_body = $("#creator_body"),
 		creator_btn = document.getElementsByClassName('creator')[0],
 		now_at = 1,
-		to_top = document.getElementById('to_top'),
-		loaded_images = 0;
+		to_top = document.getElementById('to_top');
 
 	var wonders = document.querySelectorAll(".wonder"),
 		detail = document.querySelector('#detail'),
 		back = document.querySelector('#back'),
 		_block_items = [document.querySelector('#_img'), document.querySelector('#_content'), document.querySelector('#_preview_btn')];
-
-	for (var i = 0; i < wonders_detail.length; i++) {
-		scene[i].getElementsByTagName('p')[0].innerHTML = wonders_detail[i].name;
-	}
 
 	/* this parallax_create() function include to_top_btn part */
 	parallax_create(scene, parallaxs, main_body);
