@@ -86,7 +86,7 @@ var wonders_detail = [{
 	"name": "Paper Texture",
 	"image_source": 'img/paper_texture.jpg',
 	"url": "wonder/paper_texture/",
-	"content": "<span>Main Idea:</span><br> Paper Texture <br> <br> <span>Plugin:</span><br> No plugin <br> <br> <span>Main Skill:</span><br> CSS Linear-gradient <br><br> <span>Date:</span> <br> 2014/09 <br> <br> Use two kind of white create a paper texture like backgrounf. <br> <pre></pre>"
+	"content": "<span>Main Idea:</span><br> Paper Texture <br> <br> <span>Plugin:</span><br> No plugin <br> <br> <span>Main Skill:</span><br> CSS Linear-gradient <br><br> <span>Date:</span> <br> 2014/09 <br> <br> Use two kind of white create a paper texture like background. <br> <pre></pre>"
 }, {
 	"name": "HappyBirthday",
 	"image_source": 'img/HappyBirthday.jpg',
@@ -153,7 +153,10 @@ document.addEventListener("DOMContentLoaded", function() {
 			loadedNumber: 0,
 			loadingProcess: 0,
 			loadingContext: "0%",
-			loadingStyle: ""
+			loadingStyle: "",
+			detailClass: "detail",
+			detailStyle: "",
+			detailHTML: ""
 		},
 		watch: {
 			loadingProcess: function(now) {
@@ -161,8 +164,18 @@ document.addEventListener("DOMContentLoaded", function() {
 			}
 		},
 		methods: {
+			setBackground: function(input) {
+				return "background-image: url('" + input + "'')";
+			},
 			wonderClick: function(key) {
-				console.log(this.list[key]);
+				this.detailClass = 'detail clicked';
+
+				this.detailHTML = this.list[key].content;
+				this.detailStyle = "background-image: url("+this.list[key].image_source+");";
+
+				_block_items[2].onclick = function() {
+					window.open(this.list[key].url, '_blank');
+				};
 			},
 			imageLoaded: function() {
 				var total = this.list.length;
@@ -172,6 +185,9 @@ document.addEventListener("DOMContentLoaded", function() {
 				if (this.loadedNumber == this.list.length) {
 					this.loadingStyle = "opacity: 0; pointer-events:none;";
 				}
+			},
+			back: function() {
+				this.detailClass = "detail";
 			}
 		}
 	});
@@ -189,8 +205,6 @@ document.addEventListener("DOMContentLoaded", function() {
 		to_top = document.getElementById('to_top');
 
 	var wonders = document.querySelectorAll(".wonder"),
-		detail = document.querySelector('#detail'),
-		back = document.querySelector('#back'),
 		_block_items = [document.querySelector('#_img'), document.querySelector('#_content'), document.querySelector('#_preview_btn')];
 
 	/* this parallax_create() function include to_top_btn part */
@@ -202,21 +216,10 @@ document.addEventListener("DOMContentLoaded", function() {
 	}
 
 	function create_wonder_click_event(wonder, number, detail) {
-		wonder.onclick = function() {
-			// console.log(this.getElementsByTagName('img')[0]);
-			detail.getElementsByClassName('_img')[0].style.backgroundImage = "url(" + this.getElementsByTagName('img')[0].src + ")";
-			detail.getElementsByClassName('_content')[0].innerHTML = wonders_detail[number].content;
-			_block_items[2].onclick = function() {
-				window.open(wonders_detail[number].url, '_blank');
-			};
 
-			detail.style.opacity = 1;
-			detail.style.zIndex = 1;
-			_block_items.forEach(function(item) {
-				item.style.transform = "translateX(0px)";
-				item.style.opacity = 1;
-			});
-		};
+		return;
+
+		wonder.onclick = function() {};
 	}
 
 	main_btn.onclick = function() {
@@ -289,6 +292,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	};
 
 	back.onclick = function() {
+		return;
 		detail.style.opacity = 0;
 		_block_items.forEach(function(item) {
 			item.style.transform = "translateX(-50px)";

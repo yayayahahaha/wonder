@@ -785,7 +785,7 @@ body {
   width: 60%;
   height: 80%;
   background-position: center;
-  background-size: 100% auto;
+  background-size: cover;
   -moz-box-shadow: 0px 0px 60px 30px black inset;
   -webkit-box-shadow: 0px 0px 60px 30px black inset;
   box-shadow: 0px 0px 60px 30px black inset;
@@ -842,7 +842,7 @@ body {
   color: snow;
 }
 /* line 517, ../sass/style.scss */
-.detail ._block ._cover .preview_btn {
+.detail ._block ._cover ._preview_btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -914,8 +914,37 @@ body {
   -webkit-transform: rotateZ(-45deg);
   transform: rotateZ(-45deg);
 }
+/* line 568, ../sass/style.scss */
+.detail.clicked {
+  z-index: 1;
+  opacity: 1;
+}
+/* line 571, ../sass/style.scss */
+.detail.clicked ._img {
+  opacity: 1;
+  -moz-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  -webkit-transform: translateX(0px);
+  transform: translateX(0px);
+}
+/* line 576, ../sass/style.scss */
+.detail.clicked ._cover ._content {
+  opacity: 1;
+  -moz-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  -webkit-transform: translateX(0px);
+  transform: translateX(0px);
+}
+/* line 580, ../sass/style.scss */
+.detail.clicked ._cover ._preview_btn {
+  opacity: 1;
+  -moz-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  -webkit-transform: translateX(0px);
+  transform: translateX(0px);
+}
 
-/* line 569, ../sass/style.scss */
+/* line 589, ../sass/style.scss */
 .to_top {
   position: fixed;
   bottom: 7vh;
@@ -933,13 +962,13 @@ body {
   -webkit-transition: opacity 0.2s, -webkit-transform 0.4s;
   transition: opacity 0.2s, transform 0.4s;
 }
-/* line 583, ../sass/style.scss */
+/* line 603, ../sass/style.scss */
 .to_top:hover:after {
   -moz-animation: top_animation 0.2s linear forwards;
   -webkit-animation: top_animation 0.2s linear forwards;
   animation: top_animation 0.2s linear forwards;
 }
-/* line 587, ../sass/style.scss */
+/* line 607, ../sass/style.scss */
 .to_top:after {
   cursor: pointer;
   content: 'Back';
@@ -1047,18 +1076,18 @@ body {
     transform: rotateZ(360deg);
   }
 }
-/* line 625, ../sass/style.scss */
+/* line 645, ../sass/style.scss */
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
 
-/* line 629, ../sass/style.scss */
+/* line 649, ../sass/style.scss */
 ::-webkit-scrollbar-track {
   background-color: transparent;
 }
 
-/* line 632, ../sass/style.scss */
+/* line 652, ../sass/style.scss */
 ::-webkit-scrollbar-thumb {
   background-color: transparent;
   border: 1px solid white;

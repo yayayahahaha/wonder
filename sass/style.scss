@@ -478,7 +478,7 @@ body{
 			width: 60%;
 			height: 80%;
 			background-position: center;
-			background-size: 100% auto;
+			background-size: cover;
 			@include box-shadow(0px 0px 60px 30px black inset);
 			&:hover{
 				@include box-shadow(0px 0px 0px 0px black inset);
@@ -514,7 +514,7 @@ body{
 				@include transition(transform 0.3s 0.2s, opacity 0.3s 0.2s);
 				@include transform(translateX(-50px));
 			}
-			.preview_btn{
+			._preview_btn{
 				display: flex;
 				justify-content:center;
 				align-items:center;
@@ -564,6 +564,26 @@ body{
 			@include transform(rotateZ(-45deg));
 		}
 	}
+
+	&.clicked{
+		z-index: 1;
+		opacity: 1;
+		._img {
+				opacity: 1;
+				@include transform(translateX(0px));
+			}
+		._cover{
+			._content {
+				opacity: 1;
+				@include transform(translateX(0px));
+			}
+			._preview_btn {
+				opacity: 1;
+				@include transform(translateX(0px));
+			}
+		}
+	}
+
 }
 
 .to_top{

@@ -38,15 +38,15 @@
 			<div class="persent" v-text="loadingContext"></div>
 		</div>
 
-		<div class="detail" id="detail">
+		<div :class="detailClass" id="detail">
 			<div class="_block">
-				<div class="_img" id="_img"></div>
+				<div class="_img" id="_img" :style="detailStyle"></div>
 				<div class="_cover">
-					<div class="_content" id="_content"></div>
-					<div class="preview_btn" id="_preview_btn">Visit</div>
+					<div class="_content" id="_content" v-html='detailHTML'></div>
+					<div class="_preview_btn" id="_preview_btn">Visit</div>
 				</div>
 			</div>
-			<div class="_back" id="back"></div>
+			<div class="_back" id="back" @click="back"></div>
 		</div>
 
 	</div>
