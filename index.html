@@ -33,12 +33,12 @@
 			</div>
 		</div>
 
-		<div class="loading">
+		<div class="loading" :style='loadingStyle'>
 			<div class="line"></div>
 			<br>
-			<div class="persent">0%</div>
+			<div class="persent" v-text="loadingContext"></div>
 		</div>
-		
+
 	</div>
 
 	<div id="egg" class="egg">

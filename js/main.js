@@ -150,25 +150,27 @@ document.addEventListener("DOMContentLoaded", function() {
 		el: '#main_body',
 		data: {
 			list: wonders_detail,
-			loadedNumber:0
+			loadedNumber: 0,
+			loadingProcess: 0,
+			loadingContext: "0%",
+			loadingStyle: ""
+		},
+		watch:{
+			loadingProcess: function(now) {
+				this.loadingContext = now + "%";
+			}
 		},
 		methods: {
 			wonderClick: function(key) {
 				console.log(this.list[key]);
 			},
 			imageLoaded: function() {
-				this.loadedNumber++;
 				var total = this.list.length;
-				document.getElementsByClassName('persent')[0].innerHTML = (loaded_images * 100 / total).toFixed(2) + " %";
-				
+				this.loadedNumber++;
+				this.loadingProcess = Math.round(this.loadedNumber * 10000 / total) / 100;
+
 				if (this.loadedNumber == this.list.length) {
-					console.log("works!");
-					// console.log("done!");
-					document.getElementsByClassName('loading')[0].style.opacity = 0;
-					setTimeout(function() {
-						document.getElementsByClassName('loading')[0].style.display = "none";
-						document.getElementsByClassName('loading')[0].innerHTML = "";
-					}, 300);
+					this.loadingStyle = "opacity: 0; pointer-events:none;";
 				}
 			}
 		}
@@ -203,7 +205,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		img.onload = function() {
 			loaded_images++;
 			if (loaded_images == total) {} else {
-				
+
 			}
 		}
 	}
