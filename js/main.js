@@ -156,7 +156,8 @@ document.addEventListener("DOMContentLoaded", function() {
 			loadingStyle: "",
 			detailClass: "detail",
 			detailStyle: "",
-			detailHTML: ""
+			detailHTML: "",
+			detailLink:"#"
 		},
 		watch: {
 			loadingProcess: function(now) {
@@ -173,9 +174,8 @@ document.addEventListener("DOMContentLoaded", function() {
 				this.detailHTML = this.list[key].content;
 				this.detailStyle = "background-image: url("+this.list[key].image_source+");";
 
-				_block_items[2].onclick = function() {
-					window.open(this.list[key].url, '_blank');
-				};
+				this.detailLink = this.list[key].url;
+
 			},
 			imageLoaded: function() {
 				var total = this.list.length;

@@ -13,6 +13,10 @@ $team_rwby: "../R.jpg", "../W.jpg", "../B.jpg", "../Y.jpg";
 	padding: 0px;
 	font-family:arial, "Yu Gothic", "SimHei";
 }
+a{
+	text-decoration: none;
+	color: inherit;
+}
 
 @font-face {
     font-family: RWBY;

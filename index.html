@@ -43,7 +43,7 @@
 				<div class="_img" id="_img" :style="detailStyle"></div>
 				<div class="_cover">
 					<div class="_content" id="_content" v-html='detailHTML'></div>
-					<div class="_preview_btn" id="_preview_btn">Visit</div>
+					<a :href="detailLink" target="_blank"><div class="_preview_btn" id="_preview_btn">Visit</div></a>
 				</div>
 			</div>
 			<div class="_back" id="back" @click="back"></div>
