@@ -12,44 +12,37 @@ var team_rwby = {
 };
 
 
-var wonders_detail = [
-{
+var wonders_detail = [{
 	"name": "Svg Polygon Layout",
 	"image_source": "img/svg_polygon.jpg",
 	"url": "wonder/svg_polygon/",
 	"content": "<span>Main Idea:</span> <br> Svg Polygon Layout <br> <br> <span>Plugin:</span> <br> Snap.js D3.js <br> <br> <span>Main Skill:</span> <br> Polygon layout and animation <br> <br> <span>Date:</span> <br> 2016/9 <br> <br> Image Source:   <br> https://wall.alphacoders.com/big.php?i=731778  <br> https://wall.alphacoders.com/big.php?i=662361  <br> https://wall.alphacoders.com/big.php?i=665318  <br> https://wall.alphacoders.com/big.php?i=692002  <br> https://wall.alphacoders.com/big.php?i=678651  <br> https://wall.alphacoders.com/big.php?i=681590  <br> https://wall.alphacoders.com/big.php?i=445259  <br> https://wall.alphacoders.com/big.php?i=552395  <br> https://wall.alphacoders.com/big.php?i=552399  <br> https://wall.alphacoders.com/big.php?i=552394  <br> https://wall.alphacoders.com/big.php?i=445275  <br> https://wall.alphacoders.com/big.php?i=643334  <br> <br> First time using snap with d3, has a lots of dirty codes.  <br> next time will be better<br>"
-},
-{
+}, {
 	"name": "SVG Customized Polygon",
 	"image_source": "img/SVG_customized_polygon.jpg",
 	"url": "wonder/SVG_customized_polygon/",
 	"content": "<span>Main Idea:</span> <br> SVG Customized Polygon <br> <br> <span>Plugin:</span> <br> Snap.js <br> <br> <span>Main Skill:</span> <br> use json type to make create polygon layout more easier <br> <br> <span>Date:</span> <br> 2016/9 <br> <br> Image source:  <br> https://wall.alphacoders.com/big.php?i=552399  <br> https://wall.alphacoders.com/big.php?i=552395  <br> https://wall.alphacoders.com/big.php?i=552393  <br> https://wall.alphacoders.com/big.php?i=552394  <br> <br> use json type to make create polygon layout more functional<br>"
-},
-{
+}, {
 	"name": "Stained Glass",
 	"image_source": "img/Stained Glass.jpg",
 	"url": "wonder/Stained_Glass/",
 	"content": "<span>Main Idea:</span> <br> Stained Glass <br> <br> <span>Plugin:</span> <br> delaunay.js <br> <br> <span>Main Skill:</span> <br> Delaunay Traingulation Method <br> <br> <span>Date:</span> <br> 2016/9 <br> <br> Inspire: http://codepen.io/FlyC/pen/wzZVRB  <br> <br> modify DelaunayJS' example<br> <br>"
-},
-{
+}, {
 	"name": "Leaf Vein",
 	"image_source": "img/leaf_vein.jpg",
 	"url": "wonder/Leaf_Vein/",
 	"content": "<span>Main Idea:</span> <br> Leaf Vein <br> <br> <span>Plugin:</span> <br> TweenMax <br> <br> <span>Main Skill:</span> <br> Canvas animation, center of gravity <br> <br> <span>Date:</span> <br> 2016/9 <br> <br> Divide view_port to two triangle,<br> then find each triangle's gravity center,<br> again, and again.<br> <br>"
-},
-{
+}, {
 	"name": "Floating Words",
 	"image_source": "img/Floating Words.jpg",
 	"url": "wonder/Floating_Words/",
 	"content": "<span>Main Idea:</span> <br> Floating Words <br> <br> <span>Plugin:</span> <br> No-plugin <br> <br> <span>Main Skill:</span> <br> Canvas fillText, measureText <br> <br> <span>Date:</span> <br> 2016/9 <br> <br> Words source: lyrics of song \"Red Like Roses part II\" - RWBY Theme <br> determine size and speed by it frequency in lyrics <br> hope you like it : ) <br>"
-},
-{
+}, {
 	"name": "Chess Board",
 	"image_source": "img/chess_board.jpg",
 	"url": "wonder/chess_board/",
 	"content": "<span>Main Idea:</span> <br> Chess Board <br> <br> <span>Plugin:</span> <br> No-plugin <br> <br> <span>Main Skill:</span> <br> CSS Background linear-gradient <br> <br> <span>Date:</span> <br> 2016/8 <br> <br> code from: <br> https://gist.github.com/orioltf/2566558 <br>"
-},
-{
+}, {
 	"name": "Firefly Firework",
 	"image_source": "img/bezier_line.jpg",
 	"url": "wonder/BezierLine/",
@@ -152,157 +145,169 @@ var wonders_detail = [
 }];
 
 document.addEventListener("DOMContentLoaded", function() {
-    
-    /* images loader  */
-    var images = [],
-    	scene = document.getElementsByClassName('scene'),
-    	parallaxs = [],
-    	main_body = $("#main_body"),
-    	main_btn = document.getElementsByClassName('title')[0],
-    	about_body = $("#about_body"),
-    	about_btn = document.getElementsByClassName('about')[0],
-    	creator_body = $("#creator_body"),
-    	creator_btn = document.getElementsByClassName('creator')[0],
-    	now_at = 1,
-    	to_top = document.getElementById('to_top'),
-    	loaded_images = 0;
 
-    var wonders = document.getElementsByClassName('wonder'),
-    	detail = document.getElementById('detail'),
-    	back = document.getElementById('back'),
-    	_block_items = [document.getElementById('_img'), document.getElementById('_content'), document.getElementById('_preview_btn')];
+	new Vue({
+		el: '#main_body',
+		data: {
+			list: wonders_detail
+		},
+		methods: {
+			wonderClick: function(key) {
+				console.log(this.list[key]);
+			}
+		}
+	});
 
-    for (var i = 0; i < wonders_detail.length; i++) {
-    	scene[i].getElementsByTagName('p')[0].innerHTML = wonders_detail[i].name;
+	/* images loader  */
+	var images = [],
+		scene = document.getElementsByClassName('scene'),
+		parallaxs = [],
+		main_body = $("#main_body"),
+		main_btn = document.getElementsByClassName('title')[0],
+		about_body = $("#about_body"),
+		about_btn = document.getElementsByClassName('about')[0],
+		creator_body = $("#creator_body"),
+		creator_btn = document.getElementsByClassName('creator')[0],
+		now_at = 1,
+		to_top = document.getElementById('to_top'),
+		loaded_images = 0;
 
-    	load_image(scene[i].getElementsByTagName('img')[0], wonders_detail[i].image_source, i, wonders_detail.length);
-    }
+	var wonders = document.querySelectorAll(".wonder"),
+		detail = document.querySelector('#detail'),
+		back = document.querySelector('#back'),
+		_block_items = [document.querySelector('#_img'), document.querySelector('#_content'), document.querySelector('#_preview_btn')];
 
-    function load_image(img, src, number, total) {
-    	img.src = src;
-    	images.push(img);
-    	img.onload = function() {
-    		loaded_images++;
-    		if (loaded_images == total) {
-    			// console.log("done!");
-    			document.getElementsByClassName('loading')[0].style.opacity = 0;
-    			setTimeout(function() {
-    				document.getElementsByClassName('loading')[0].style.display = "none";
-    				document.getElementsByClassName('loading')[0].innerHTML = "";
-    			}, 300);
-    		} else {
-    			document.getElementsByClassName('persent')[0].innerHTML = (loaded_images * 100 / total).toFixed(2) + " %";
-    		}
-    	}
-    }
+	for (var i = 0; i < wonders_detail.length; i++) {
+		scene[i].getElementsByTagName('p')[0].innerHTML = wonders_detail[i].name;
 
-    /* this parallax_create() function include to_top_btn part */
-    parallax_create(scene, parallaxs, main_body);
+		load_image(scene[i].getElementsByTagName('img')[0], wonders_detail[i].image_source, i, wonders_detail.length);
+	}
 
-    /* create wonder click event */
-    for (key in wonders) {
-    	create_wonder_click_event(wonders[key], parseInt(key), detail);
-    }
+	function load_image(img, src, number, total) {
+		img.src = src;
+		images.push(img);
+		img.onload = function() {
+			loaded_images++;
+			if (loaded_images == total) {
+				// console.log("done!");
+				document.getElementsByClassName('loading')[0].style.opacity = 0;
+				setTimeout(function() {
+					document.getElementsByClassName('loading')[0].style.display = "none";
+					document.getElementsByClassName('loading')[0].innerHTML = "";
+				}, 300);
+			} else {
+				document.getElementsByClassName('persent')[0].innerHTML = (loaded_images * 100 / total).toFixed(2) + " %";
+			}
+		}
+	}
 
-    function create_wonder_click_event(wonder, number, detail) {
-    	wonder.onclick = function() {
-    		// console.log(this.getElementsByTagName('img')[0]);
-    		detail.getElementsByClassName('_img')[0].style.backgroundImage = "url(" + this.getElementsByTagName('img')[0].src + ")";
-    		detail.getElementsByClassName('_content')[0].innerHTML = wonders_detail[number].content;
-    		_block_items[2].onclick = function() {
-    			window.open(wonders_detail[number].url, '_blank');
-    		}
+	/* this parallax_create() function include to_top_btn part */
+	parallax_create(scene, parallaxs, main_body);
 
-    		detail.style.opacity = 1;
-    		detail.style.zIndex = 1;
-    		_block_items.forEach(function(item) {
-    			item.style.transform = "translateX(0px)";
-    			item.style.opacity = 1;
-    		});
-    	}
-    }
+	/* create wonder click event */
+	for (key in wonders) {
+		create_wonder_click_event(wonders[key], parseInt(key), detail);
+	}
+
+	function create_wonder_click_event(wonder, number, detail) {
+		wonder.onclick = function() {
+			// console.log(this.getElementsByTagName('img')[0]);
+			detail.getElementsByClassName('_img')[0].style.backgroundImage = "url(" + this.getElementsByTagName('img')[0].src + ")";
+			detail.getElementsByClassName('_content')[0].innerHTML = wonders_detail[number].content;
+			_block_items[2].onclick = function() {
+				window.open(wonders_detail[number].url, '_blank');
+			}
+
+			detail.style.opacity = 1;
+			detail.style.zIndex = 1;
+			_block_items.forEach(function(item) {
+				item.style.transform = "translateX(0px)";
+				item.style.opacity = 1;
+			});
+		}
+	}
 
 
 
-    main_btn.onclick = function() {
-    	if (now_at == 2) {
-    		about_body.css({
-    			zIndex: -1,
-    			transform: 'translateX(100vw)'
-    		});
-    	} else if (now_at == 3) {
-    		creator_body.css({
-    			zIndex: -1,
-    			transform: 'translateX(100vw)'
-    		});
-    		about_body.css({
-    			zIndex: -1,
-    			transform: 'translateX(100vw)'
-    		});
-    	}
-    	to_top.style.transform = "translateX(0vw)"
-    	main_body.css({
-    		zIndex: 1,
-    		left: '0vw'
-    	});
+	main_btn.onclick = function() {
+		if (now_at == 2) {
+			about_body.css({
+				zIndex: -1,
+				transform: 'translateX(100vw)'
+			});
+		} else if (now_at == 3) {
+			creator_body.css({
+				zIndex: -1,
+				transform: 'translateX(100vw)'
+			});
+			about_body.css({
+				zIndex: -1,
+				transform: 'translateX(100vw)'
+			});
+		}
+		to_top.style.transform = "translateX(0vw)"
+		main_body.css({
+			zIndex: 1,
+			left: '0vw'
+		});
 
-    	now_at = 1;
-    }
-    about_btn.onclick = function() {
-    	if (now_at == 1) {
-    		to_top.style.transform = "translateX(-100vw)"
-    		main_body.css({
-    			zIndex: -1,
-    			left: '-100vw'
-    		});
-    	} else if (now_at == 3) {
-    		creator_body.css({
-    			zIndex: -1,
-    			transform: 'translateX(100vw)'
-    		});
-    	}
-    	about_body.css({
-    		zIndex: 1,
-    		transform: 'translateX(0vw)'
-    	});
+		now_at = 1;
+	}
+	about_btn.onclick = function() {
+		if (now_at == 1) {
+			to_top.style.transform = "translateX(-100vw)"
+			main_body.css({
+				zIndex: -1,
+				left: '-100vw'
+			});
+		} else if (now_at == 3) {
+			creator_body.css({
+				zIndex: -1,
+				transform: 'translateX(100vw)'
+			});
+		}
+		about_body.css({
+			zIndex: 1,
+			transform: 'translateX(0vw)'
+		});
 
-    	now_at = 2;
-    }
-    creator_btn.onclick = function() {
-    	if (now_at == 2) {
-    		about_body.css({
-    			zIndex: -1,
-    			transform: 'translateX(-100vw)'
-    		});
-    	} else if (now_at == 1) {
-    		to_top.style.transform = "translateX(-100vw)"
-    		main_body.css({
-    			zIndex: -1,
-    			left: '-100vw'
-    		});
-    		about_body.css({
-    			zIndex: -1,
-    			transform: 'translateX(-100vw)'
-    		});
-    	}
-    	creator_body.css({
-    		zIndex: 1,
-    		transform: 'translateX(0vw)'
-    	});
+		now_at = 2;
+	}
+	creator_btn.onclick = function() {
+		if (now_at == 2) {
+			about_body.css({
+				zIndex: -1,
+				transform: 'translateX(-100vw)'
+			});
+		} else if (now_at == 1) {
+			to_top.style.transform = "translateX(-100vw)"
+			main_body.css({
+				zIndex: -1,
+				left: '-100vw'
+			});
+			about_body.css({
+				zIndex: -1,
+				transform: 'translateX(-100vw)'
+			});
+		}
+		creator_body.css({
+			zIndex: 1,
+			transform: 'translateX(0vw)'
+		});
 
-    	now_at = 3;
-    }
+		now_at = 3;
+	}
 
-    back.onclick = function() {
-    	detail.style.opacity = 0;
-    	_block_items.forEach(function(item) {
-    		item.style.transform = "translateX(-50px)";
-    		item.style.opacity = 0;
-    	})
-    	setTimeout(function() {
-    		detail.style.zIndex = -2;
-    	}, 150);
-    }
+	back.onclick = function() {
+		detail.style.opacity = 0;
+		_block_items.forEach(function(item) {
+			item.style.transform = "translateX(-50px)";
+			item.style.opacity = 0;
+		})
+		setTimeout(function() {
+			detail.style.zIndex = -2;
+		}, 150);
+	}
 
 });
 
