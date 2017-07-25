@@ -149,11 +149,27 @@ document.addEventListener("DOMContentLoaded", function() {
 	new Vue({
 		el: '#main_body',
 		data: {
-			list: wonders_detail
+			list: wonders_detail,
+			loadedNumber:0
 		},
 		methods: {
 			wonderClick: function(key) {
 				console.log(this.list[key]);
+			},
+			imageLoaded: function() {
+				this.loadedNumber++;
+				var total = this.list.length;
+				document.getElementsByClassName('persent')[0].innerHTML = (loaded_images * 100 / total).toFixed(2) + " %";
+				
+				if (this.loadedNumber == this.list.length) {
+					console.log("works!");
+					// console.log("done!");
+					document.getElementsByClassName('loading')[0].style.opacity = 0;
+					setTimeout(function() {
+						document.getElementsByClassName('loading')[0].style.display = "none";
+						document.getElementsByClassName('loading')[0].innerHTML = "";
+					}, 300);
+				}
 			}
 		}
 	});
@@ -179,8 +195,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	for (var i = 0; i < wonders_detail.length; i++) {
 		scene[i].getElementsByTagName('p')[0].innerHTML = wonders_detail[i].name;
-
-		load_image(scene[i].getElementsByTagName('img')[0], wonders_detail[i].image_source, i, wonders_detail.length);
 	}
 
 	function load_image(img, src, number, total) {
@@ -188,15 +202,8 @@ document.addEventListener("DOMContentLoaded", function() {
 		images.push(img);
 		img.onload = function() {
 			loaded_images++;
-			if (loaded_images == total) {
-				// console.log("done!");
-				document.getElementsByClassName('loading')[0].style.opacity = 0;
-				setTimeout(function() {
-					document.getElementsByClassName('loading')[0].style.display = "none";
-					document.getElementsByClassName('loading')[0].innerHTML = "";
-				}, 300);
-			} else {
-				document.getElementsByClassName('persent')[0].innerHTML = (loaded_images * 100 / total).toFixed(2) + " %";
+			if (loaded_images == total) {} else {
+				
 			}
 		}
 	}

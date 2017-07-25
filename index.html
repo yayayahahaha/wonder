@@ -27,18 +27,24 @@
 		<!-- div.scene(div[class="wonder layer" data-depth="0.5"](img)(p))*20 -->
 		<div class="scene" v-for='(item, key) in list' @click='wonderClick(key) '>
 			<div class="wonder layer" data-depth="0.5">
-				<img src="">
+				<img :src="item.image_source" @load='imageLoaded'>
 				<p>
 				</p>
 			</div>
 		</div>
 
+		<div class="loading">
+			<div class="line"></div>
+			<br>
+			<div class="persent">0%</div>
+		</div>
+		
 	</div>
 
 	<div id="egg" class="egg">
 		<li class="egg_in layer" data-depth="0.5"></li>
 	</div>
-	
+
 	<div class="to_top" id="to_top"></div>
 
 	<div class="detail" id="detail">
@@ -50,12 +56,6 @@
 			</div>
 		</div>
 		<div class="_back" id="back"></div>
-	</div>
-
-	<div class="loading">
-		<div class="line"></div>
-		<br>
-		<div class="persent">0%</div>
 	</div>
 
 	<div class="about_body" id="about_body">
