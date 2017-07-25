@@ -144,172 +144,174 @@ var wonders_detail = [{
 	"content": "<span>Main Idea:</span><br> Round and Round <br> <br> <span>Plugin:</span><br> TweenMax <br> <br> <span>Main Skill:</span><br> Canvas Animation <br><br> <span>Date:</span> <br> 2016/08 <br> <br> when I first think about \"Round and round\", this song comes to my mind:   <br> https://youtu.be/VQFhd3X8p6g?t=21s     <br> yeah, Adventure Time's song: Food Chain Song   <br> <br> basically, this project is a practice about canvas animation combine with tweenmax,     <br> the rotation part is the most weird part, you have to use save() and restore() to decide origin of canvas each time. <br> <br> Color I use hsl(), rather than rgb() it could make the same saturation  color. <br>"
 }];
 
-document.addEventListener("DOMContentLoaded", function() {
 
-	new Vue({
-		el: '#main_body',
-		data: {
-			list: wonders_detail,
-			loadedNumber: 0,
-			loadingProcess: 0,
-			loadingContext: "0%",
-			loadingStyle: "",
-			detailClass: "detail",
-			detailStyle: "",
-			detailHTML: "",
-			detailLink:"#"
-		},
-		watch: {
-			loadingProcess: function(now) {
-				this.loadingContext = now + "%";
-			}
-		},
-		methods: {
-			setBackground: function(input) {
-				return "background-image: url('" + input + "'')";
-			},
-			wonderClick: function(key) {
 
-				this.detailClass = 'detail clicked';
-
-				this.detailHTML = this.list[key].content;
-				this.detailStyle = "background-image: url(\""+this.list[key].image_source+"\");";
-
-				console.log(this.detailStyle);
-
-				this.detailLink = this.list[key].url;
-
-			},
-			imageLoaded: function() {
-				var total = this.list.length;
-				this.loadedNumber++;
-				this.loadingProcess = Math.round(this.loadedNumber * 10000 / total) / 100;
-
-				if (this.loadedNumber == this.list.length) {
-					this.loadingStyle = "opacity: 0; pointer-events:none;";
-				}
-			},
-			back: function() {
-				this.detailClass = "detail";
-				this.detailHTML = null;
-				this.detailStyle = null;
-				this.detailLink = null;
-			}
+new Vue({
+	el: '#main_body',
+	data: {
+		list: wonders_detail,
+		loadedNumber: 0,
+		loadingProcess: 0,
+		loadingContext: "0%",
+		loadingStyle: "",
+		detailClass: "detail",
+		detailStyle: "",
+		detailHTML: "",
+		detailLink:"#"
+	},
+	watch: {
+		loadingProcess: function(now) {
+			this.loadingContext = now + "%";
 		}
+	},
+	methods: {
+		setBackground: function(input) {
+			return "background-image: url('" + input + "'')";
+		},
+		wonderClick: function(key) {
+
+			this.detailClass = 'detail clicked';
+
+			this.detailHTML = this.list[key].content;
+			this.detailStyle = "background-image: url(\""+this.list[key].image_source+"\");";
+
+			console.log(this.detailStyle);
+
+			this.detailLink = this.list[key].url;
+
+		},
+		imageLoaded: function() {
+			var total = this.list.length;
+			this.loadedNumber++;
+			this.loadingProcess = Math.round(this.loadedNumber * 10000 / total) / 100;
+
+			if (this.loadedNumber == this.list.length) {
+				this.loadingStyle = "opacity: 0; pointer-events:none;";
+			}
+		},
+		back: function() {
+			this.detailClass = "detail";
+			this.detailHTML = null;
+			this.detailStyle = null;
+			this.detailLink = null;
+		}
+	}
+});
+
+/* images loader  */
+var scene = document.getElementsByClassName('scene'),
+	parallaxs = [],
+	main_body = $("#main_body"),
+	main_btn = document.getElementsByClassName('title')[0],
+	about_body = $("#about_body"),
+	about_btn = document.getElementsByClassName('about')[0],
+	creator_body = $("#creator_body"),
+	creator_btn = document.getElementsByClassName('creator')[0],
+	now_at = 1,
+	to_top = document.getElementById('to_top');
+
+var wonders = document.querySelectorAll(".wonder"),
+	_block_items = [document.querySelector('#_img'), document.querySelector('#_content'), document.querySelector('#_preview_btn')];
+
+/* this parallax_create() function include to_top_btn part */
+parallax_create(scene, parallaxs, main_body);
+
+/* create wonder click event */
+for (var key in wonders) {
+	create_wonder_click_event(wonders[key], parseInt(key), detail);
+}
+
+function create_wonder_click_event(wonder, number, detail) {
+
+	return;
+
+	wonder.onclick = function() {};
+}
+
+main_btn.onclick = function() {
+	if (now_at == 2) {
+		about_body.css({
+			zIndex: -1,
+			transform: 'translateX(100vw)'
+		});
+	} else if (now_at == 3) {
+		creator_body.css({
+			zIndex: -1,
+			transform: 'translateX(100vw)'
+		});
+		about_body.css({
+			zIndex: -1,
+			transform: 'translateX(100vw)'
+		});
+	}
+	to_top.style.transform = "translateX(0vw)";
+	main_body.css({
+		zIndex: 1,
+		left: '0vw'
 	});
 
-	/* images loader  */
-	var scene = document.getElementsByClassName('scene'),
-		parallaxs = [],
-		main_body = $("#main_body"),
-		main_btn = document.getElementsByClassName('title')[0],
-		about_body = $("#about_body"),
-		about_btn = document.getElementsByClassName('about')[0],
-		creator_body = $("#creator_body"),
-		creator_btn = document.getElementsByClassName('creator')[0],
-		now_at = 1,
-		to_top = document.getElementById('to_top');
-
-	var wonders = document.querySelectorAll(".wonder"),
-		_block_items = [document.querySelector('#_img'), document.querySelector('#_content'), document.querySelector('#_preview_btn')];
-
-	/* this parallax_create() function include to_top_btn part */
-	parallax_create(scene, parallaxs, main_body);
-
-	/* create wonder click event */
-	for (var key in wonders) {
-		create_wonder_click_event(wonders[key], parseInt(key), detail);
-	}
-
-	function create_wonder_click_event(wonder, number, detail) {
-
-		return;
-
-		wonder.onclick = function() {};
-	}
-
-	main_btn.onclick = function() {
-		if (now_at == 2) {
-			about_body.css({
-				zIndex: -1,
-				transform: 'translateX(100vw)'
-			});
-		} else if (now_at == 3) {
-			creator_body.css({
-				zIndex: -1,
-				transform: 'translateX(100vw)'
-			});
-			about_body.css({
-				zIndex: -1,
-				transform: 'translateX(100vw)'
-			});
-		}
-		to_top.style.transform = "translateX(0vw)";
+	now_at = 1;
+};
+about_btn.onclick = function() {
+	if (now_at == 1) {
+		to_top.style.transform = "translateX(-100vw)";
 		main_body.css({
-			zIndex: 1,
-			left: '0vw'
+			zIndex: -1,
+			left: '-100vw'
 		});
-
-		now_at = 1;
-	};
-	about_btn.onclick = function() {
-		if (now_at == 1) {
-			to_top.style.transform = "translateX(-100vw)";
-			main_body.css({
-				zIndex: -1,
-				left: '-100vw'
-			});
-		} else if (now_at == 3) {
-			creator_body.css({
-				zIndex: -1,
-				transform: 'translateX(100vw)'
-			});
-		}
-		about_body.css({
-			zIndex: 1,
-			transform: 'translateX(0vw)'
-		});
-
-		now_at = 2;
-	};
-	creator_btn.onclick = function() {
-		if (now_at == 2) {
-			about_body.css({
-				zIndex: -1,
-				transform: 'translateX(-100vw)'
-			});
-		} else if (now_at == 1) {
-			to_top.style.transform = "translateX(-100vw)";
-			main_body.css({
-				zIndex: -1,
-				left: '-100vw'
-			});
-			about_body.css({
-				zIndex: -1,
-				transform: 'translateX(-100vw)'
-			});
-		}
+	} else if (now_at == 3) {
 		creator_body.css({
-			zIndex: 1,
-			transform: 'translateX(0vw)'
+			zIndex: -1,
+			transform: 'translateX(100vw)'
 		});
+	}
+	about_body.css({
+		zIndex: 1,
+		transform: 'translateX(0vw)'
+	});
 
-		now_at = 3;
-	};
-
-	back.onclick = function() {
-		return;
-		detail.style.opacity = 0;
-		_block_items.forEach(function(item) {
-			item.style.transform = "translateX(-50px)";
-			item.style.opacity = 0;
+	now_at = 2;
+};
+creator_btn.onclick = function() {
+	if (now_at == 2) {
+		about_body.css({
+			zIndex: -1,
+			transform: 'translateX(-100vw)'
 		});
-		setTimeout(function() {
-			detail.style.zIndex = -2;
-		}, 150);
-	};
+	} else if (now_at == 1) {
+		to_top.style.transform = "translateX(-100vw)";
+		main_body.css({
+			zIndex: -1,
+			left: '-100vw'
+		});
+		about_body.css({
+			zIndex: -1,
+			transform: 'translateX(-100vw)'
+		});
+	}
+	creator_body.css({
+		zIndex: 1,
+		transform: 'translateX(0vw)'
+	});
 
-});
+	now_at = 3;
+};
+
+back.onclick = function() {
+	return;
+	detail.style.opacity = 0;
+	_block_items.forEach(function(item) {
+		item.style.transform = "translateX(-50px)";
+		item.style.opacity = 0;
+	});
+	setTimeout(function() {
+		detail.style.zIndex = -2;
+	}, 150);
+};
+
+
+
+document.addEventListener("DOMContentLoaded", function() {});
 
 function parallax_create(scene, parallaxs, main_body) {
 
