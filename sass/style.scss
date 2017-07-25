@@ -458,8 +458,10 @@ body{
 	width: 100vw;
 	height:100vh;
 	background-color:_opacity_color(0, 0.8);
-	z-index: -3;
+	z-index: -300;
 	opacity: 0;
+
+	pointer-events:none;
 
 	display: flex;
 	align-items:center;
@@ -572,6 +574,7 @@ body{
 	&.clicked{
 		z-index: 1;
 		opacity: 1;
+		pointer-events:all;
 		._img {
 				opacity: 1;
 				@include transform(translateX(0px));

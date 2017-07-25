@@ -145,221 +145,206 @@ var wonders_detail = [{
 }];
 
 
+document.addEventListener("DOMContentLoaded", function() {
 
-new Vue({
-	el: '#main_body',
-	data: {
-		list: wonders_detail,
-		loadedNumber: 0,
-		loadingProcess: 0,
-		loadingContext: "0%",
-		loadingStyle: "",
-		detailClass: "detail",
-		detailStyle: "",
-		detailHTML: "",
-		detailLink:"#"
-	},
-	watch: {
-		loadingProcess: function(now) {
-			this.loadingContext = now + "%";
-		}
-	},
-	methods: {
-		setBackground: function(input) {
-			return "background-image: url('" + input + "'')";
+	new Vue({
+		el: '#main_body',
+		data: {
+			list: wonders_detail,
+			loadedNumber: 0,
+			loadingProcess: 0,
+			loadingContext: "0%",
+			loadingStyle: "",
+			detailClass: "detail",
+			detailStyle: "",
+			detailHTML: "",
+			detailLink: "#"
 		},
-		wonderClick: function(key) {
-
-			this.detailClass = 'detail clicked';
-
-			this.detailHTML = this.list[key].content;
-			this.detailStyle = "background-image: url(\""+this.list[key].image_source+"\");";
-
-			console.log(this.detailStyle);
-
-			this.detailLink = this.list[key].url;
-
-		},
-		imageLoaded: function() {
-			var total = this.list.length;
-			this.loadedNumber++;
-			this.loadingProcess = Math.round(this.loadedNumber * 10000 / total) / 100;
-
-			if (this.loadedNumber == this.list.length) {
-				this.loadingStyle = "opacity: 0; pointer-events:none;";
+		watch: {
+			loadingProcess: function(now) {
+				this.loadingContext = now + "%";
 			}
 		},
-		back: function() {
-			this.detailClass = "detail";
-			this.detailHTML = null;
-			this.detailStyle = null;
-			this.detailLink = null;
+		methods: {
+			setBackground: function(input) {
+				return "background-image: url('" + input + "'')";
+			},
+			wonderClick: function(key) {
+
+				this.detailClass = 'detail clicked';
+
+				this.detailHTML = this.list[key].content;
+				this.detailStyle = "background-image: url(\"" + this.list[key].image_source + "\");";
+
+				console.log(this.detailStyle);
+
+				this.detailLink = this.list[key].url;
+
+			},
+			imageLoaded: function() {
+				console.log("something");
+
+				var total = this.list.length;
+				this.loadedNumber++;
+				this.loadingProcess = Math.round(this.loadedNumber * 10000 / total) / 100;
+
+				if (this.loadedNumber == this.list.length) {
+					this.loadingStyle = "opacity: 0; pointer-events:none;";
+				}
+			},
+			back: function() {
+				this.detailClass = "detail";
+				this.detailHTML = null;
+				this.detailStyle = null;
+				this.detailLink = null;
+			}
+		},
+		mounted: function() {
+			console.log(this);
 		}
-	}
-});
-
-/* images loader  */
-var scene = document.getElementsByClassName('scene'),
-	parallaxs = [],
-	main_body = $("#main_body"),
-	main_btn = document.getElementsByClassName('title')[0],
-	about_body = $("#about_body"),
-	about_btn = document.getElementsByClassName('about')[0],
-	creator_body = $("#creator_body"),
-	creator_btn = document.getElementsByClassName('creator')[0],
-	now_at = 1,
-	to_top = document.getElementById('to_top');
-
-var wonders = document.querySelectorAll(".wonder"),
-	_block_items = [document.querySelector('#_img'), document.querySelector('#_content'), document.querySelector('#_preview_btn')];
-
-/* this parallax_create() function include to_top_btn part */
-parallax_create(scene, parallaxs, main_body);
-
-/* create wonder click event */
-for (var key in wonders) {
-	create_wonder_click_event(wonders[key], parseInt(key), detail);
-}
-
-function create_wonder_click_event(wonder, number, detail) {
-
-	return;
-
-	wonder.onclick = function() {};
-}
-
-main_btn.onclick = function() {
-	if (now_at == 2) {
-		about_body.css({
-			zIndex: -1,
-			transform: 'translateX(100vw)'
-		});
-	} else if (now_at == 3) {
-		creator_body.css({
-			zIndex: -1,
-			transform: 'translateX(100vw)'
-		});
-		about_body.css({
-			zIndex: -1,
-			transform: 'translateX(100vw)'
-		});
-	}
-	to_top.style.transform = "translateX(0vw)";
-	main_body.css({
-		zIndex: 1,
-		left: '0vw'
 	});
 
-	now_at = 1;
-};
-about_btn.onclick = function() {
-	if (now_at == 1) {
-		to_top.style.transform = "translateX(-100vw)";
+	/* images loader  */
+	var scene = document.getElementsByClassName('scene'),
+		parallaxs = [],
+		main_body = $("#main_body"),
+		main_btn = document.getElementsByClassName('title')[0],
+		about_body = $("#about_body"),
+		about_btn = document.getElementsByClassName('about')[0],
+		creator_body = $("#creator_body"),
+		creator_btn = document.getElementsByClassName('creator')[0],
+		now_at = 1,
+		to_top = document.getElementById('to_top');
+
+	var wonders = document.querySelectorAll(".wonder"),
+		_block_items = [document.querySelector('#_img'), document.querySelector('#_content'), document.querySelector('#_preview_btn')];
+
+	/* this parallax_create() function include to_top_btn part */
+	parallax_create(scene, parallaxs, main_body);
+
+	/* create wonder click event */
+	for (var key in wonders) {
+		create_wonder_click_event(wonders[key], parseInt(key), detail);
+	}
+
+	main_btn.onclick = function() {
+		if (now_at == 2) {
+			about_body.css({
+				zIndex: -1,
+				transform: 'translateX(100vw)'
+			});
+		} else if (now_at == 3) {
+			creator_body.css({
+				zIndex: -1,
+				transform: 'translateX(100vw)'
+			});
+			about_body.css({
+				zIndex: -1,
+				transform: 'translateX(100vw)'
+			});
+		}
+		to_top.style.transform = "translateX(0vw)";
 		main_body.css({
-			zIndex: -1,
-			left: '-100vw'
+			zIndex: 1,
+			left: '0vw'
 		});
-	} else if (now_at == 3) {
+
+		now_at = 1;
+	};
+	about_btn.onclick = function() {
+		if (now_at == 1) {
+			to_top.style.transform = "translateX(-100vw)";
+			main_body.css({
+				zIndex: -1,
+				left: '-100vw'
+			});
+		} else if (now_at == 3) {
+			creator_body.css({
+				zIndex: -1,
+				transform: 'translateX(100vw)'
+			});
+		}
+		about_body.css({
+			zIndex: 1,
+			transform: 'translateX(0vw)'
+		});
+
+		now_at = 2;
+	};
+	creator_btn.onclick = function() {
+		if (now_at == 2) {
+			about_body.css({
+				zIndex: -1,
+				transform: 'translateX(-100vw)'
+			});
+		} else if (now_at == 1) {
+			to_top.style.transform = "translateX(-100vw)";
+			main_body.css({
+				zIndex: -1,
+				left: '-100vw'
+			});
+			about_body.css({
+				zIndex: -1,
+				transform: 'translateX(-100vw)'
+			});
+		}
 		creator_body.css({
-			zIndex: -1,
-			transform: 'translateX(100vw)'
+			zIndex: 1,
+			transform: 'translateX(0vw)'
 		});
-	}
-	about_body.css({
-		zIndex: 1,
-		transform: 'translateX(0vw)'
-	});
 
-	now_at = 2;
-};
-creator_btn.onclick = function() {
-	if (now_at == 2) {
-		about_body.css({
-			zIndex: -1,
-			transform: 'translateX(-100vw)'
-		});
-	} else if (now_at == 1) {
-		to_top.style.transform = "translateX(-100vw)";
-		main_body.css({
-			zIndex: -1,
-			left: '-100vw'
-		});
-		about_body.css({
-			zIndex: -1,
-			transform: 'translateX(-100vw)'
-		});
-	}
-	creator_body.css({
-		zIndex: 1,
-		transform: 'translateX(0vw)'
-	});
+		now_at = 3;
+	};
 
-	now_at = 3;
-};
+	function parallax_create(scene, parallaxs, main_body) {
 
-back.onclick = function() {
-	return;
-	detail.style.opacity = 0;
-	_block_items.forEach(function(item) {
-		item.style.transform = "translateX(-50px)";
-		item.style.opacity = 0;
-	});
-	setTimeout(function() {
-		detail.style.zIndex = -2;
-	}, 150);
-};
-
-
-
-document.addEventListener("DOMContentLoaded", function() {});
-
-function parallax_create(scene, parallaxs, main_body) {
-
-	for (var i = 0; i < scene.length; i++) {
-		var parallax = new Parallax(scene[i], {
+		for (var i = 0; i < scene.length; i++) {
+			var parallax = new Parallax(scene[i], {
+				calibrateX: true,
+				calibrateY: true,
+				invertX: Math.random() > 0.5 ? true : false,
+				invertY: Math.random() > 0.5 ? true : false,
+				scalarX: 45,
+				scalarY: 45,
+				frictionX: 0.01,
+				frictionY: 0.01
+			});
+			parallaxs.push(parallax);
+		}
+		parallaxs.push(new Parallax(document.getElementById('egg'), {
+			// relativeInput: true,
 			calibrateX: true,
 			calibrateY: true,
-			invertX: Math.random() > 0.5 ? true : false,
-			invertY: Math.random() > 0.5 ? true : false,
-			scalarX: 45,
-			scalarY: 45,
-			frictionX: 0.01,
-			frictionY: 0.01
+			invertX: true,
+			invertY: true,
+			scalarX: 5000,
+			scalarY: 5000,
+			frictionX: 0.03,
+			frictionY: 0.03
+		}));
+
+		/* start to_top_part */
+		main_body.mousewheel(function(e) {
+			if (e.deltaY == 1) {
+				if (main_body.scrollTop() - e.deltaFactor <= 0) {
+					to_top.style.opacity = 0;
+				}
+			} else {
+				if (main_body.scrollTop() + e.deltaFactor >= 0) {
+					to_top.style.opacity = 1;
+				}
+			}
 		});
-		parallaxs.push(parallax);
+
+		to_top.onclick = function() {
+			main_body.animate({
+					scrollTop: 0
+				},
+				400,
+				function() {
+					to_top.style.opacity = 0;
+				});
+		};
 	}
-	parallaxs.push(new Parallax(document.getElementById('egg'), {
-		// relativeInput: true,
-		calibrateX: true,
-		calibrateY: true,
-		invertX: true,
-		invertY: true,
-		scalarX: 5000,
-		scalarY: 5000,
-		frictionX: 0.03,
-		frictionY: 0.03
-	}));
 
-	/* start to_top_part */
-	main_body.mousewheel(function(e) {
-		if (e.deltaY == 1) {
-			if (main_body.scrollTop() - e.deltaFactor <= 0) {
-				to_top.style.opacity = 0;
-			}
-		} else {
-			if (main_body.scrollTop() + e.deltaFactor >= 0) {
-				to_top.style.opacity = 1;
-			}
-		}
-	});
-
-	to_top.onclick = function() {
-		main_body.animate({
-				scrollTop: 0
-			},
-			400,
-			function() {
-				to_top.style.opacity = 0;
-			});
-	};
-}
+});
