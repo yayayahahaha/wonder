@@ -199,17 +199,6 @@ document.addEventListener("DOMContentLoaded", function() {
 		scene[i].getElementsByTagName('p')[0].innerHTML = wonders_detail[i].name;
 	}
 
-	function load_image(img, src, number, total) {
-		img.src = src;
-		images.push(img);
-		img.onload = function() {
-			loaded_images++;
-			if (loaded_images == total) {} else {
-
-			}
-		}
-	}
-
 	/* this parallax_create() function include to_top_btn part */
 	parallax_create(scene, parallaxs, main_body);
 
