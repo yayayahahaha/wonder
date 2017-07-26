@@ -45,7 +45,7 @@ var wonders_detail = [{
 }, {
 	"name": "Firefly Firework",
 	"image_source": "img/bezier_line.jpg",
-	"url": "wonder/bezierline/",
+	"url": "wonder/bezier_line/",
 	"content": "<span>Main Idea:</span><br> Firefly Firework <br> <br> <span>Plugin:</span><br> No-plugin <br> <br> <span>Main Skill:</span><br> Canvas Animation <br><br> <span>Date:</span> <br> 2015/07 <br> <br> Use bezier line function to create firework-like curve line, <br> then use hsl function create firefly-like sparkle. <br> <pre></pre>"
 }, {
 	"name": "Flashlight",
@@ -90,7 +90,7 @@ var wonders_detail = [{
 }, {
 	"name": "HappyBirthday",
 	"image_source": 'img/HappyBirthday.jpg',
-	"url": "wonder/happybirthday/",
+	"url": "wonder/happy_birthday/",
 	"content": "<span>Main Idea:</span><br> HappyBirthday <br> <br> <span>Plugin:</span><br> No plugin <br> <br> <span>Main Skill:</span><br> CSS perspective effect and transform rotate <br><br> <span>Date:</span> <br> 2015/10 <br> <br> Yep, just say happ birthday to myself! <br> <pre></pre>"
 }, {
 	"name": "RWD RWBY Big Block Menu with pop box",
