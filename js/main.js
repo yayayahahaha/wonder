@@ -13,6 +13,11 @@ var team_rwby = {
 
 
 var wonders_detail = [{
+	"name": "Rainbow Fall",
+	"image_source": "img/rainbow_fall.jpg",
+	"url": "wonder/rainbow_fall/",
+	"content": "<span> Main Idea:</span> <br> Rainboww Falls (with force)<br> <br> <span> Plugin:</span> <br> none<br> <br> <span> Main Skill:</span> <br> Canvas animation and custom force zone<br>coffee script <br> <br> <span> Date:</span> <br> 2016/10<br> <br> <br> 透過判定文字的位子來決定文字的顏色<br> 且透過計算與滑鼠間的距離決定其文字的加速度方向<br>"
+}, {
 	"name": "Svg Polygon Layout",
 	"image_source": "img/svg_polygon.jpg",
 	"url": "wonder/svg_polygon/",
@@ -196,7 +201,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			}
 		},
 		mounted: function() {
-			
+
 		}
 	});
 
