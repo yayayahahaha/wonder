@@ -1,9 +1,0 @@
-body{
-background: 
-  linear-gradient(135deg, transparent 75%, rgba(0, 0, 0, 1) 0%) 0 0,
-  linear-gradient(-45deg, transparent 75%, rgba(0, 0, 0, 1) 0%) 25px 25px,
-  linear-gradient(135deg, transparent 75%, rgba(0, 0, 0, 1) 0%) 25px 25px,
-  linear-gradient(-45deg, transparent 75%, rgba(0, 0, 0, 1) 0%) 0 0,rgb(255,0,99);
-  background-size: 50px 50px;
-/*   background-repeat:no-repeat; */
-}
