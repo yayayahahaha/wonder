@@ -1,0 +1,9 @@
+@import "compass/reset";
+@import "compass/css3";
+
+$backColor: #141414;
+
+body{
+	background-color: $backColor;
+	overflow: hidden;
+}
