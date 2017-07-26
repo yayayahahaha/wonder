@@ -20,22 +20,22 @@ var wonders_detail = [{
 }, {
 	"name": "SVG Customized Polygon",
 	"image_source": "img/SVG_customized_polygon.jpg",
-	"url": "wonder/SVG_customized_polygon/",
+	"url": "wonder/svg_customized_polygon/",
 	"content": "<span>Main Idea:</span> <br> SVG Customized Polygon <br> <br> <span>Plugin:</span> <br> Snap.js <br> <br> <span>Main Skill:</span> <br> use json type to make create polygon layout more easier <br> <br> <span>Date:</span> <br> 2016/9 <br> <br> Image source:  <br> https://wall.alphacoders.com/big.php?i=552399  <br> https://wall.alphacoders.com/big.php?i=552395  <br> https://wall.alphacoders.com/big.php?i=552393  <br> https://wall.alphacoders.com/big.php?i=552394  <br> <br> use json type to make create polygon layout more functional<br>"
 }, {
 	"name": "Stained Glass",
 	"image_source": "img/Stained Glass.jpg",
-	"url": "wonder/Stained_Glass/",
+	"url": "wonder/stained_glass/",
 	"content": "<span>Main Idea:</span> <br> Stained Glass <br> <br> <span>Plugin:</span> <br> delaunay.js <br> <br> <span>Main Skill:</span> <br> Delaunay Traingulation Method <br> <br> <span>Date:</span> <br> 2016/9 <br> <br> Inspire: http://codepen.io/FlyC/pen/wzZVRB  <br> <br> modify DelaunayJS' example<br> <br>"
 }, {
 	"name": "Leaf Vein",
 	"image_source": "img/leaf_vein.jpg",
-	"url": "wonder/Leaf_Vein/",
+	"url": "wonder/leaf_vein/",
 	"content": "<span>Main Idea:</span> <br> Leaf Vein <br> <br> <span>Plugin:</span> <br> TweenMax <br> <br> <span>Main Skill:</span> <br> Canvas animation, center of gravity <br> <br> <span>Date:</span> <br> 2016/9 <br> <br> Divide view_port to two triangle,<br> then find each triangle's gravity center,<br> again, and again.<br> <br>"
 }, {
 	"name": "Floating Words",
 	"image_source": "img/Floating Words.jpg",
-	"url": "wonder/Floating_Words/",
+	"url": "wonder/floating_words/",
 	"content": "<span>Main Idea:</span> <br> Floating Words <br> <br> <span>Plugin:</span> <br> No-plugin <br> <br> <span>Main Skill:</span> <br> Canvas fillText, measureText <br> <br> <span>Date:</span> <br> 2016/9 <br> <br> Words source: lyrics of song \"Red Like Roses part II\" - RWBY Theme <br> determine size and speed by it frequency in lyrics <br> hope you like it : ) <br>"
 }, {
 	"name": "Chess Board",
@@ -45,12 +45,12 @@ var wonders_detail = [{
 }, {
 	"name": "Firefly Firework",
 	"image_source": "img/bezier_line.jpg",
-	"url": "wonder/BezierLine/",
+	"url": "wonder/bezierline/",
 	"content": "<span>Main Idea:</span><br> Firefly Firework <br> <br> <span>Plugin:</span><br> No-plugin <br> <br> <span>Main Skill:</span><br> Canvas Animation <br><br> <span>Date:</span> <br> 2015/07 <br> <br> Use bezier line function to create firework-like curve line, <br> then use hsl function create firefly-like sparkle. <br> <pre></pre>"
 }, {
 	"name": "Flashlight",
 	"image_source": 'img/Flashlight.jpg',
-	"url": "wonder/Flashlight/",
+	"url": "wonder/flashlight/",
 	"content": "<span>Main Idea:</span><br> Flashlight <br> <br> <span>Plugin:</span><br> Jquery <br> <br> <span>Main Skill:</span><br> Canvas Global Composite Operation <br><br> <span>Date:</span> <br> 2016/03 <br> <br> Use canvas' global composite operation to clip the dark we want to light up, <br> still have some efficacy problem <br> <pre></pre>"
 }, {
 	"name": "Line Animation",
@@ -65,22 +65,22 @@ var wonders_detail = [{
 }, {
 	"name": "Black Block",
 	"image_source": 'img/Black Block.jpg',
-	"url": "wonder/Black_Block/",
+	"url": "wonder/black_block/",
 	"content": "<span>Main Idea:</span><br> Black Block <br> <br> <span>Plugin:</span><br> No plugin. <br> <br> <span>Main Skill:</span><br> Canvas point setting and line practice <br><br> <span>Date:</span> <br> 2015/09 <br> <br> count block's four points then scale it by minus each coordinate, <br> rotate it with css <br>"
 }, {
 	"name": "Parallax RWBY transform",
 	"image_source": 'img/Parallax_RWBY_transform.jpg',
-	"url": "wonder/Parallax_RWBY_transform/",
+	"url": "wonder/parallax_rwby_transform/",
 	"content": "<span>Main Idea:</span><br> Parallax RWBY transform <br> <br> <span>Plugin:</span><br> No plugin. <br> <br> <span>Main Skill:</span><br> CSS perspective. <br><br> <span>Date:</span> <br> 2016/05 <br> <br> use pure css create parallax effect with depth of field.   <br> and a little bit pop-up photo browser. <br> <br> image source: pixiv.net <br> <pre></pre>"
 }, {
 	"name": "Parallax RWBY with content",
 	"image_source": 'img/Parallax_RWBY_with_content.jpg',
-	"url": "wonder/Parallax_RWBY_with_content/",
+	"url": "wonder/parallax_rwby_with_content/",
 	"content": "<span>Main Idea:</span><br> Parallax RWBY with content <br> <br> <span>Plugin:</span><br> No plugin <br> <br> <span>Main Skill:</span><br> CSS image attachment <br><br> <span>Date:</span> <br> 2016/05 <br> <br> Pure css simple parallax effect demo, without  javascript. <br> <br> images source: pixiv <br> content soure: rwby wiki <br> <pre></pre>"
 }, {
 	"name": "Customized Snowflake",
 	"image_source": 'img/Customized Snowflake.jpg',
-	"url": "wonder/Customized_Snowflake/",
+	"url": "wonder/customized_snowflake/",
 	"content": "<span>Main Idea:</span><br> Customized Snowflake <br> <br> <span>Plugin:</span><br> No plugin <br> <br> <span>Main Skill:</span><br> Math application <br><br> <span>Date:</span> <br> 2016/12 <br> <br> Every lines you see are straight, but it seems that there's a curve between each axis. Have some bugs when setting the point number and axis length but it's still cool I thought :D <br> <br> Hope you enjoyed! <br> <pre></pre>"
 }, {
 	"name": "Paper Texture",
@@ -90,22 +90,22 @@ var wonders_detail = [{
 }, {
 	"name": "HappyBirthday",
 	"image_source": 'img/HappyBirthday.jpg',
-	"url": "wonder/HappyBirthday/",
+	"url": "wonder/happybirthday/",
 	"content": "<span>Main Idea:</span><br> HappyBirthday <br> <br> <span>Plugin:</span><br> No plugin <br> <br> <span>Main Skill:</span><br> CSS perspective effect and transform rotate <br><br> <span>Date:</span> <br> 2015/10 <br> <br> Yep, just say happ birthday to myself! <br> <pre></pre>"
 }, {
 	"name": "RWD RWBY Big Block Menu with pop box",
 	"image_source": 'img/RWD RWBY Big Block Menu with pop box.jpg',
-	"url": "wonder/RWD_RWBY_Big_Block_Menu_with_pop_box/",
+	"url": "wonder/rwd_rwby_big_block_menu_with_pop_box/",
 	"content": "<span>Main Idea:</span><br> RWD RWBY Big Block Menu with pop box <br> <br> <span>Plugin:</span><br> No plugin <br> <br> <span>Main Skill:</span><br> RWD and media practice <br><br> <span>Date:</span> <br> 2016/08 <br> <br> Resize and clikc it to see RWD effect <br> <br> Image Source: http://www.pixiv.net/ <br> Introduction Source: http://rwby.wikia.com/wiki/RWBY_Wiki <br> <pre></pre>"
 }, {
 	"name": "Colorful Worm Paint",
 	"image_source": 'img/Colorful Worm Paint.jpg',
-	"url": "wonder/Colorful_Worm_Paint/",
+	"url": "wonder/colorful_worm_paint/",
 	"content": "<span>Main Idea:</span><br> Colorful Worm Paint <br> <br> <span>Plugin:</span><br> No plugin <br> <br> <span>Main Skill:</span><br> Canvas without clean view <br><br> <span>Date:</span> <br> 2015/07 <br> <br> modify the code from \"Firefly Firework\" <br> try to heart user's eyes (? <br> but it's cool and some kind of beautiful, right? <br>"
 }, {
 	"name": "Rain Tunnel",
 	"image_source": 'img/Rain Tunnel.jpg',
-	"url": "wonder/Rain_Tunnel/",
+	"url": "wonder/rain_tunnel/",
 	"content": "<span>Main Idea:</span><br> Rain Tunnel <br> <br> <span>Plugin:</span><br> No plugin <br> <br> <span>Main Skill:</span><br> Canvas vertor practice <br><br> <span>Date:</span> <br> 2015/10 <br> <br> Base on Max Ruigewaard's \"Rain on HTML5 Canvas\"  code <br> http://codepen.io/ruigewaard/pen/JHDdF <br> <br> change some code and write some comment use my poor English, <br> add hover effect to make it looks like a tunnel <br> <br> Hope you enjoyed, Rain Tunnel : D <br>"
 }, {
 	"name": "Snow of Sakura",
@@ -120,22 +120,22 @@ var wonders_detail = [{
 }, {
 	"name": "Ink Blood Nightmares",
 	"image_source": 'img/Ink Blood Nightmares.jpg',
-	"url": "wonder/Ink_Blood_Nightmares/",
+	"url": "wonder/ink_blood_nightmares/",
 	"content": "<span>Main Idea:</span><br> Ink Blood Nightmares <br> <br> <span>Plugin:</span><br> No plugin <br> <br> <span>Main Skill:</span><br> Canvas Animation <br><br> <span>Date:</span> <br> 2016/03 <br> <br> modify from \"千流星\" <br> <br> Alright I know I'm not that good at naming something,  <br> but.. whatever. <br> it takes a lots of time for me to enhance the efficacy. <br> Hope you like it :D <br> <br> The  Chinese name comes from a novel called \"日落後\" write by 星子 <br> is totally not the translation of the English name. <br>"
 }, {
 	"name": "Pure CSS TurnStile",
 	"image_source": 'img/Pure CSS TurnStile.jpg',
-	"url": "wonder/Pure_CSS_TurnStile/",
+	"url": "wonder/pure_css_turnstile/",
 	"content": "<span>Main Idea:</span><br> Pure CSS TurnStile <br> <br> <span>Plugin:</span><br> No plugin <br> <br> <span>Main Skill:</span><br> CSS Animation and perspective <br><br> <span>Date:</span> <br> 2016/06 <br> <br> rotate combine perspective attribute."
 }, {
 	"name": "Music Vitualization",
 	"image_source": 'img/Music Vitualization.jpg',
-	"url": "wonder/Music_Vitualization/",
+	"url": "wonder/music_vitualization/",
 	"content": "<span>Main Idea:</span><br> Music Vitualization <br> <br> <span>Plugin:</span><br> No plugin <br> <br> <span>Main Skill:</span><br> Javescript Audio Data Vitualization <br><br> <span>Date:</span> <br> 2016/08 <br> <br> Practice from \"https://www.patrick-wied.at/blog/how-to-create-audio-visualizations-with-javascript-html\" <br> get music data, then vitualize it (?)"
 }, {
 	"name": "Line Fall",
 	"image_source": 'img/Line Fall.jpg',
-	"url": "wonder/Line_Fall/",
+	"url": "wonder/line_fall/",
 	"content": "<span>Main Idea:</span><br> Line Fall <br> <br> <span>Plugin:</span><br> No plugin <br> <br> <span>Main Skill:</span><br> Canvas Animation <br><br> <span>Date:</span> <br> 2016/05 <br> <br> at first, all lines seem to move around randomly, but before long all lines go vertical, and few seconds later,   <br> <br> line fall shows up. <br>"
 }, {
 	"name": "Round and Round",
