@@ -1,0 +1,51 @@
+@import "compass/reset";
+@import "compass/css3";
+$backColor: #141414;
+$h: 100vh;
+$w: 100vw;
+// $color-collection: ('red', 'orange', 'yellow', 'blue');
+$color-collection: ('green', 'red', 'yellow', 'blue');
+
+body {
+	background-color: $backColor;
+	// position: absolute;
+	text-align: center;
+}
+
+div.block {
+	position:relative;
+	margin: auto 0;
+	top: $h * 0.5;
+    -webkit-box-reflect: below -5px linear-gradient(transparent, rgba(255, 255, 255, 0.3));
+    -o-box-reflect: below -5px linear-gradient(transparent, rgba(255, 255, 255, 0.3));
+}
+
+span{
+	display: inline-block;
+	font-family: arial;
+	font-size: $h * 0.1;
+	margin-right: $w * 0.02;
+	@include transition(all 2s);
+	@include transform(rotateY(0deg));
+	@include animation(colorRun 2s infinite);
+}
+
+@for $i from 1 through 14 {
+	$temp: $i;
+	span:nth-child(#{$i}) {
+		@include animation(colorRun 2s ease $i*0.1s infinite);
+		color: unquote(nth($color-collection, $temp%4 +1 ));
+	}
+}
+
+@include keyframes(colorRun) {
+	0%{
+		@include transform(translateY(0) scaleX(1) rotateY(0deg) rotateX(0deg));
+	}
+	50%{
+		@include transform(translateY(-$h/4) scaleX(1) rotateY(360deg) rotateX(-360deg));
+	}
+	100%{
+		@include transform(translateY(0) scaleX(1) rotateY(0deg));
+	}
+}
