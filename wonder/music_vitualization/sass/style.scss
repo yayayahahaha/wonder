@@ -1,0 +1,13 @@
+@import "compass/css3";
+$w: 100vw;
+$h: 100vh;
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body{
+	background: #141414;
+	overflow: hidden;
+}

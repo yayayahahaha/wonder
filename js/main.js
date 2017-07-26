@@ -115,7 +115,7 @@ var wonders_detail = [{
 }, {
 	"name": "千流星",
 	"image_source": 'img/千流星.jpg',
-	"url": "wonder/千流星/",
+	"url": "wonder/thousand_meteor/",
 	"content": "<span>Main Idea:</span><br> 千流星 <br> <br> <span>Plugin:</span><br> No plugin <br> <br> <span>Main Skill:</span><br> Canvas Animation <br><br> <span>Date:</span> <br> 2016/03 <br> <br> imitate from \"http://codepen.io/dleatherman/pen/kAzgw\" <br> <br> \"Thousands of Shooting Start\" <br> I'm always imagining a sky has a thousands of shooting stars, which means have a thousands of wishes could make all dreams come true :D <br> Well I know if it really happened probably means the end of the world, <br> but I thought it could be beautiful anyhow, right :D? <br> <br> By imitating other fantastic programmers, well, truly advance my own skill and understand the shortage of myself. <br> I hope someday I could become the one who is imitated by someone 0w- <br>"
 }, {
 	"name": "Ink Blood Nightmares",
@@ -182,7 +182,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 			},
 			imageLoaded: function() {
-				console.log("something");
 
 				var total = this.list.length;
 				this.loadedNumber++;

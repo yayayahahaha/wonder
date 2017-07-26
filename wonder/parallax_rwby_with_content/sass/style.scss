@@ -1,0 +1,144 @@
+@import "compass/reset";
+@import "compass/css3";
+$backColor: #141414;
+$w: 100vw;
+$h: 100vh;
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+.sensor {
+	height: $h;
+	overflow-y: scroll;
+	background: black;
+	width: 100%;
+
+	.title {
+		font-family: Arial;	
+		font-size: 3em;
+		height: 80px;
+		color: white;
+		vertical-align: middle;
+		text-align: center;
+		&:after{
+			vertical-align: middle;
+			display:inline-block;
+			content: '';
+			height: 100%;
+		}
+	}
+	.parallax {
+		overflow: hidden;
+
+		font-family: arial;
+		font-size: 3em;
+		border: 1px solid rgba(0, 0, 0, 0.5);
+		height: $h * 0.7;
+		@include box-sizing(border-box);
+		background-size: 120% auto;
+		background-attachment: fixed;
+		vertical-align: middle;
+
+		&:hover {
+			& div {
+				opacity: 1;
+			}
+		}
+
+		&:after {
+			display: inline-block;
+			content: "";
+			height: 100%;
+			vertical-align: middle;
+			// border: 1px solid red;
+		}
+
+		.name{
+			@include transition(opacity 0.3s);
+			opacity: 0;
+			background-color: rgba(255,255,255,0.5);
+			padding: 1%;
+			text-align: center;
+			margin: 2%;
+			width: 20%;
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		.content {
+			@include transition(opacity 0.2s 0.1s);
+			@include box-sizing(border-box);
+			position: relative;
+			opacity: 0;
+			background: rgba(0, 0, 0, 0.6);
+			font-size: 0.5em;
+			font-family: arial;
+			line-height: 1.5em;
+			text-align: justify;
+			color: white;
+			width: 70%;
+			display: inline-block;
+			vertical-align: middle;
+			border: $w*0.05 solid transparent;
+		}
+
+		&:nth-child(2) {
+			background-image: url("../R.jpg");
+		}
+		&:nth-child(3) {
+			color: white;
+			background-image: url("../W.jpg");
+		}
+		&:nth-child(4) {
+			background-image: url("../B.jpg");
+		}
+		&:nth-child(5) {
+			color: white;
+			background-image: url("../Y.jpg");
+		}
+	}
+	.footer {
+		text-align: center;
+		font-family: Arial;
+		font-size: 1em;
+		height: 80px;
+		color: white;
+		div{
+			display: inline-block;
+			vertical-align: middle;
+			line-height: 1.5em;
+		}
+
+		a {
+			color: white;
+		}
+		&:after {
+			display: inline-block;
+			content: "";
+			height: 80px;
+			vertical-align: middle;
+		}
+	}
+}
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+::-webkit-scrollbar-track {
+	background-color: #ececec;
+}
+::-webkit-scrollbar-thumb {
+	background-color: rgba(56, 89, 100, 0.4);
+	border: 2px solid #e3e7f0;
+}
+::-webkit-scrollbar-button {
+	height: 0px;
+	background: red;
+	width: 0px;
+}
+::-webkit-scrollbar-corner {
+	margin-top: 20px;
+	background-color: #e3e7f1;
+}

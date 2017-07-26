@@ -1,0 +1,37 @@
+@import "compass/reset";
+@import "compass/css3";
+$backColor: #141414;
+$w: 100vw;
+$h: 100vh;
+
+body {
+	background-color: $backColor;
+	overflow: hidden;
+}
+canvas{
+	@include animation(_rotate_animation 30s linear infinite);
+}
+._rotate {
+	position: relative;
+}
+._controller {
+	background: rgba(255, 255, 255, 0.5);
+	color: $backColor;
+	font-weight: bold;
+	font-style: arial;
+	margin: 5px;
+	padding: 5px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: $w / 5;
+	// border: 1px solid red;
+}
+@include keyframes(_rotate_animation) {
+	0% {
+		@include transform(rotateZ(0deg));
+	}
+	100% {
+		@include transform(rotateZ(360deg));
+	}
+}

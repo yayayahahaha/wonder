@@ -1,0 +1,11 @@
+/* line 5, ../sass/style.scss */
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* line 10, ../sass/style.scss */
+body {
+  background: #141414;
+  overflow: hidden;
+}

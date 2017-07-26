@@ -1,0 +1,14 @@
+body {
+  margin:0px;
+  padding: 0px;
+  background-color: #141414;
+  overflow: hidden;
+}
+
+path{
+  opacity: 0.3;
+}
+
+path:hover{
+  opacity: 1;
+}

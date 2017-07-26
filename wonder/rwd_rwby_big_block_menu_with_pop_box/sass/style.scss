@@ -1,0 +1,267 @@
+@import "compass/css3";
+
+$w: 100vw;
+$h: 100vh;
+$team_rwby: "../R.jpg", "../W.jpg", "../B.jpg", "../Y.jpg";
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    background-color: #141414;
+    font-family: arial;
+}
+
+.r_photo {
+    background-image: url(unquote(nth($team_rwby, 1)));
+}
+
+.w_photo {
+    background-image: url(unquote(nth($team_rwby, 2)));
+}
+
+.b_photo {
+    background-image: url(unquote(nth($team_rwby, 3)));
+}
+
+.y_photo {
+    background-image: url(unquote(nth($team_rwby, 4)));
+}
+
+.pop_mask {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    z-index: -1;
+    @include transition(opacity 0.5s 0s);
+
+    .pop_block {
+        width: 75%;
+        height: 75%;
+        background-color: rgba(255, 255, 255, 0.6);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        opacity: 0;
+
+
+        .pop_img {
+            width: 60%;
+            height: 75%;
+
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0;
+
+        }
+
+        .pop_content {
+            width: 32.5%;
+            height: 75%;
+            display: flex;
+            align-items: center;
+            font-family: arial;
+            font-size: 1.2vw;
+            text-align: justify;
+            opacity: 0;
+
+        }
+    }
+}
+
+$time: 0.3;
+$delay: 0.2;
+.pop_mask_animation{
+    @include transition(opacity #{$time}s 0s);
+    opacity: 1;
+
+    .pop_block{
+        @include transition(opacity #{$time}s #{$delay}s);
+        opacity: 1;
+        
+        .pop_img{
+            @include transition(opacity #{$time}s #{$delay*2}s);
+            opacity: 1;
+        }
+
+        .pop_content{
+            @include transition(opacity #{$time}s #{$delay*3}s);
+            opacity: 1;
+        }
+    }
+}
+
+.big {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+
+    // flex-direction:column;
+    flex-direction: row;
+    justify-content: space-around;
+
+    .block {
+        position: initail;
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+        overflow: hidden;
+
+        img {
+            height: 100%;
+
+            @include transform(translateX(0px));
+
+            @include transition(transform linear 10s);
+        }
+
+        .content {
+            position: absolute;
+            bottom: 0px;
+            width: 25%;
+            height: 0px;
+            background: rgba(0, 0, 0, 0.6);
+
+            @include transition(height 0.5s);
+
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .words {
+                font-size: 1.2vw;
+                text-align: justify;
+                width: 98%;
+                display: inline-block;
+                color: transparent;
+                opacity: 0;
+                padding: 1vw;
+
+                @include transition(opacity 0.3s 0.5s, color 0.3s);
+            }
+        }
+
+        &:hover {
+            cursor: pointer;
+
+            img {
+                @include transform(translateX(-46vw));
+            }
+
+            .content {
+                height: 100%;
+
+                .words {
+                    opacity: 1;
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    .pop_mask {
+        .pop_block {
+            flex-direction: column;
+
+            .pop_img {
+                width: 75%;
+                height: 60%;
+            }
+
+            .pop_content {
+                display: flex;
+
+                width: 75%;
+                height: 37.5%;
+                font-size: 1.2vw;
+            }
+        }
+    }
+
+    .big {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        .block {
+            position: relative;
+            width: 100%;
+            height: 25%;
+            display: inline-block;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: auto;
+
+                @include transform(translateX(0px));
+
+                @include transition(transform linear 10s);
+            }
+
+            .content {
+                position: absolute;
+                left: 0px;
+                width: 0px;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.6);
+
+                @include transition(width 0.5s);
+
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                .words {
+                    font-size: 1.2vw;
+                    text-align: justify;
+                    width: 98%;
+                    display: inline-block;
+                    color: transparent;
+                    opacity: 0;
+                    padding: 1vw;
+
+                    @include transition(opacity 0.3s 0.5s, color 0.3s);
+                }
+            }
+
+            &:hover {
+                cursor: pointer;
+
+                img {
+                    @include transform(translateY(-46vh));
+                }
+
+                .content {
+                    width: 100%;
+
+                    .words {
+                        opacity: 1;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
