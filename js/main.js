@@ -222,11 +222,6 @@ document.addEventListener("DOMContentLoaded", function() {
 	/* this parallax_create() function include to_top_btn part */
 	parallax_create(scene, parallaxs, main_body);
 
-	/* create wonder click event */
-	for (var key in wonders) {
-		create_wonder_click_event(wonders[key], parseInt(key), detail);
-	}
-
 	main_btn.onclick = function() {
 		if (now_at == 2) {
 			about_body.css({
