@@ -176,10 +176,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				this.detailHTML = this.list[key].content;
 				this.detailStyle = "background-image: url(\"" + this.list[key].image_source + "\");";
 
-				console.log(this.detailStyle);
-
 				this.detailLink = this.list[key].url;
-
 			},
 			imageLoaded: function() {
 
@@ -199,7 +196,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			}
 		},
 		mounted: function() {
-			console.log(this);
+			
 		}
 	});
 
