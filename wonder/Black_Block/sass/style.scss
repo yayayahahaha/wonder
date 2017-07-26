@@ -1,0 +1,38 @@
+@import "compass/reset";
+@import "compass/css3";
+$backColor: #141414;
+
+body {
+	background-color: $backColor;
+	overflow: hidden;
+
+	@include animation(backgroundChange 3s linear infinite);
+}
+canvas {
+	@include animation(turn 10s linear infinite);
+	@include transform(rotateZ(0deg) scaleX(1.5) scaleY(1.5));
+}
+
+@include keyframes(backgroundChange) {
+	0%{
+		background-color: $backColor;
+	}
+
+	100%{
+		background-color: rgb(0,0,0);
+	}
+}
+
+@include keyframes(turn) {
+	0%{
+		@include transform(rotateZ(0deg) scaleX(1.5) scaleY(1.5));
+	}
+
+	50%{
+		@include transform(rotateZ(180deg) rotateY(90deg) rotateX(-90deg) scaleX(3) scaleY(3));
+	}
+
+	100%{
+		@include transform(rotateZ(360deg) scaleX(1.5) scaleY(1.5));
+	}
+}

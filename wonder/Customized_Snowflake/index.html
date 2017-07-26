@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta chatset="utf-8">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+
+	<title>Customized Snowflake</title>
+</head>
+<body>
+	<div class="_rotate">
+		<canvas id="canvas"></canvas>
+	</div>
+	<div class="_controller">
+		Axis Number:
+		<p id="axis_count">3</p>
+		<input id="axis_controller" type="range" value="3" min="3" maxlength="300px" style="width:19vw; margin:10px;" max="100">
+		Point Number (keep axis' length):
+		<p id="point_count">24</p>
+		<input id="point_controller" type="range" value="24" min="2" maxlength="300px" style="width:19vw; margin:10px;" max="102">
+		Point Distance (keep point's distance):
+		<p id="point_distance_count">24</p>
+		<input id="point_distance_controller" type="range" value="24" min="2" maxlength="300px" style="width:19vw; margin:10px;" max="102">
+		Line Weight:
+		<p id="line_weight_count">1</p>
+		<input id="line_weight_controller" type="range" value="1" min="1" maxlength="300px" style="width:19vw; margin:10px;" max="100">
+		Axis Length:
+		<p id="axis_length_count"></p>
+		<input id="axis_length_controller" type="range" value="" min="0" maxlength="300px" style="width:19vw; margin:10px;" max="3000">
+	
+		Rotate Speed:
+		<p id="rotate_speed_count">30s</p>
+		<input id="rotate_speed_controller" type="range" value="300" min="1" maxlength="300px" style="width:19vw; margin:10px;" max="300">
+
+		</div>
+</body>
+</html>
