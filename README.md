@@ -1,5 +1,7 @@
 # Wonder
 
+![](./readme/home.png)
+
 > 有些過時，卻依舊燦爛
 
 ### Overview
