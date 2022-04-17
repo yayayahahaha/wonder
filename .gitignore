@@ -2,3 +2,5 @@
 *.sass-cache
 prepros.cfg
 .DS_Store
+
+node_modules/
